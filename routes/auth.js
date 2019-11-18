@@ -10,11 +10,18 @@ router.get("/signup", (req, res) => {
 
 router.post("/signup", (req, res, next) => {
   const name = req.body.name;
-  const lastname = req.body.lastname;
+  const age = req.body.age;
+  const description = req.body.description;
   const email = req.body.email;
   const password = req.body.password;
 
-  if (name === "" || password === "" || email === "") {
+  if (
+    name === "" ||
+    age === "" ||
+    description === "" ||
+    email === "" ||
+    password === ""
+  ) {
     res.render("signup", {
       msg: "Indicate a username and a password to sign up"
     });
@@ -39,7 +46,8 @@ router.post("/signup", (req, res, next) => {
       userModel
         .create({
           name,
-          lastname,
+          age,
+          description,
           email,
           password: hashPass
         })
