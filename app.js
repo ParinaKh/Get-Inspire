@@ -54,7 +54,7 @@ function checkloginStatus(req, res, next) {
 
 function eraseSessionMessage() {
   var count = 0; // initialize counter in parent scope and use it in inner function
-  return function(req, res, next) {
+  return function (req, res, next) {
     if (req.session.msg) {
       // only increment if session contains msg
       if (count) {
@@ -80,9 +80,9 @@ const createTripRouter = require("./routes/create-trip"); //nom du fichier js da
 app.use("/manage", createTripRouter); // URL
 
 const indexRouter = require("./routes/index");
-app.use("/home", indexRouter);
+app.use("/", indexRouter);
 
-const aboutRouter = require("./routes/about");
+const aboutRouter = require("./routes/index");
 app.use("/", aboutRouter);
 
 const inspireRouter = require("./routes/inspire-me");
@@ -91,8 +91,8 @@ app.use("/", inspireRouter);
 const tripRouter = require("./routes/trip");
 app.use("/trip", tripRouter);
 
-const whishlistRouter = require("./routes/whishlist");
-app.use("/whishlist", whishlistRouter);
+const wishlistRouter = require("./routes/wishlist");
+app.use("/wishlist", wishlistRouter);
 
 // const listener = app.listen(process.env.PORT, () => {
 //   console.log(
