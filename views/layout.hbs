@@ -10,7 +10,7 @@
     <title>{{this}}</title>
     {{/each}}
     {{#each css}}
-    <link rel="stylesheet" href="stylesheet/{{this}}.css">
+    <link rel="stylesheet" href="/css/{{this}}.css">
     {{/each}}
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -21,52 +21,59 @@
 
 <body>
     <header class="header">
-        <img src="/images/logo-mexico.jpg" id="logo">
+        <img src="/images/logo-irontrip.jpg" id="logo">
         <nav class="navbar">
-            <a class="nav-item active" href="/home">Home</a>
-            <a class="nav-item" href="/inspire-me">Inspire Me</a>
-            <a class="nav-item" href="/manage/create-travel/">Create Travel</a>
-            <a class="nav-item" href="/about">About</a>
+            <div id="nav-left">
+                <a class="nav-item active" href="/home">Home</a>
+                <a class="nav-item" href="/inspire-me">Inspire Me</a>
+                <a class="nav-item" href="/about">About</a>
+                <a class="nav-item" href="/manage/create-travel/" id="create-travel">Create my Travel</a>
+            </div>
+            <div id="nav-right">
+                <a class="nav-item" href="/auth/signin/">Sign In</a>
+                <a class="nav-item" href="/auth/signup/" id="signup">Sign Up</a>
+            </div>
         </nav>
     </header>
     {{{body}}}
     <footer class="footer">
-        <h4>YOUR TOUR GUIDE</h4>
+        <h4>YOUR AWESOME TEAM</h4>
         <hr>
-        <div class="author-info">
-            <div id="one-user">
-                <img src="images/helene.jpg" alt="author-picture" id="author-picture">
+        <div class="creators-container">
+            <div class="one-creator">
+                <img src="images/helene.jpg" alt="creators-picture" id="creators-picture">
                 <h5>Hélène Favrault</h5>
                 <div class="social-icons">
-                    <img src="../images/social/001-facebook.png">
-                    <img src="../images/social/003-instagram.png">
-                    <img src="../images/social/004-pinterest.png">
-                </div>
-                <p>Helene is a Mexican passionate who is happy to make you discover one of the greatest country in the
-                    world !</p>
-            </div>
-            <div id="one-user">
-                <img src="images/helene.jpg" alt="author-picture" id="author-picture">
-                <h5>Camille Parpaillon</h5>
-                <div class="social-icons">
-                    <img src="../images/social/001-facebook.png">
-                    <img src="../images/social/003-instagram.png">
-                    <img src="../images/social/004-pinterest.png">
+                    <img src="../images/001-facebook.png">
+                    <img src="../images/003-instagram.png">
+                    <img src="../images/004-pinterest.png">
                 </div>
                 <p>Helene is a formar Media Project Manager at a tourism company passionnate about Asian culture</p>
             </div>
-            <div id="one-user">
-                <img src="images/helene.jpg" alt="author-picture" id="author-picture">
+            <div class="one-creator">
+                <img src="images/camille.jpg" alt="creators-picture" id="creators-picture">
+                <h5>Camille Parpaillon</h5>
+                <div class="social-icons">
+                    <img src="../images/001-facebook.png">
+                    <img src="../images/003-instagram.png">
+                    <img src="../images/004-pinterest.png">
+                </div>
+                <p>Helene is a formar Media Project Manager at a tourism company passionnate about Asian culture</p>
+            </div>
+            <div class="one-creator">
+                <img src="images/parina.jpg" alt="creators-picture" id="creators-picture">
                 <h5>Parina Khennavong</h5>
                 <div class="social-icons">
-                    <img src="../images/social/001-facebook.png">
-                    <img src="../images/social/003-instagram.png">
-                    <img src="../images/social/004-pinterest.png">
+                    <img src="../images/001-facebook.png">
+                    <img src="../images/003-instagram.png">
+                    <img src="../images/004-pinterest.png">
+
+                    <p>Helene is a Mexican passionate who is happy to make you discover one of the greatest country
+                        in
+                        the
+                        world !</p>
                 </div>
-                <p>Helene is a Mexican passionate who is happy to make you discover one of the greatest country in the
-                    world !</p>
             </div>
-        </div>
     </footer>
 </body>
 
