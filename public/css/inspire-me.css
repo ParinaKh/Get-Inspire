@@ -1,3 +1,13 @@
+
+/* Tags */
+
+
+
+
+
+
+/* Trip Card */
+
 .container {
   display: flex;
   flex-direction: row;
@@ -5,7 +15,6 @@
   flex-wrap: wrap;
 }
 
-/* Trip Card */
 .trip-cards {
  display: flex;
  flex-direction: column;
