@@ -30,8 +30,7 @@ router.post("/create-trip", (req, res, next) => {
         })
         .then(tripRes => {
             console.log("yeey new trip created !");
-            console.log(description);
-            console.log(destination);
+            console.log(req.body);
             res.render("forms/create-trip", { trip: tripRes, css: ["create-trip"] });
         })
         .catch(error => {
