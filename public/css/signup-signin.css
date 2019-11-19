@@ -37,19 +37,22 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 30%;
-    background-color: rgba(255, 255, 255, 0.6);
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.7);
     color: black;
-    padding: 20px;
-    border-radius: 20px
+    padding: 40px;
+    border-radius: 20px;
+    text-shadow: white 0.1em 0.1em 0.2em;
+    font-weight: bold
 }
 
 #form_user .form-item-wrapper {
-    width: 60%;
+    width: 75%;
     align-content: center;
     text-align: center;
-    margin: 12px;
+    margin: 15px;
     display: flex;
+    HEIGHT: 30px;
 }
 
 .form-subtitle {
@@ -88,15 +91,17 @@
     padding: 4px;
     border-radius: 4px;
     text-align: center;
-    width: 60%;
-    height: 15px;
+    width: 80%;
+    /* height: 15px; */
     align-items: right;
     display: flex;
-    margin-left: 5px
+    margin-left: 5px;
+    font-size: 1rem
 }
 
 .label-ref {
-    width: 100px
+    width: 30%;
+    padding-right: 10px;
 }
 
 #user-picture {
@@ -107,5 +112,11 @@
     height: 25px;
     background: #1475d0;
     text-decoration: none;
-    color: white
+    color: white;
+    border: none
+}
+
+
+#description {
+    height: 40px;
 }
