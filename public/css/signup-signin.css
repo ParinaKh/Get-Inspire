@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 9%;
+    padding-top: 7%;
+    padding-bottom: 7%;
     height: calc(100vh - (84px));
     background: url(/images/borabora.jpg);
     background-size: cover;
@@ -19,9 +20,11 @@
 }
 
 .sign.form-container .form-title {
-    font-size: 2.3em;
+    font-size: 4em;
     font-weight: 700;
     margin-bottom: .5rem;
+    text-align: center;
+    text-shadow: white 0.1em 0.1em 0.2em;
 }
 
 #form_user .form-item-wrapper:last-child {
@@ -51,6 +54,7 @@
 
 .form-subtitle {
     font-size: 1.5em;
+    text-shadow: white 0.1em 0.1em 0.2em;
 }
 
 .form-sub-infos {
@@ -88,6 +92,7 @@
     height: 15px;
     align-items: right;
     display: flex;
+    margin-left: 5px
 }
 
 .label-ref {
@@ -100,4 +105,7 @@
 
 .button-primary {
     height: 25px;
+    background: #1475d0;
+    text-decoration: none;
+    color: white
 }
