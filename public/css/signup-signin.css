@@ -6,6 +6,9 @@
     align-items: center;
     padding-top: 9%;
     height: calc(100vh - (84px));
+    background: url(/images/borabora.jpg);
+    background-size: cover;
+    color: white
 }
 
 .form-header {
@@ -31,17 +34,33 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
+    padding: 20px;
+    border-radius: 20px
 }
 
 #form_user .form-item-wrapper {
-    width: 30%;
+    width: 60%;
+    align-content: center;
+    text-align: center;
+    margin: 12px;
+    display: flex;
 }
 
-.form-subtitle {}
+.form-subtitle {
+    font-size: 1.5em;
+}
 
 .form-sub-infos {
-    font-size: .9rem;
+    font-size: 1rem;
+    color: black;
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
 }
 
 #form_user .button-primary {
@@ -51,9 +70,34 @@
 .button-link-form {
     color: rgb(52, 52, 255);
     padding-bottom: .1rem;
+    text-decoration: none
 }
 
 .button-link-form:hover {
     color: rgb(52, 52, 255);
     border-bottom: 1px solid rgb(52, 52, 255);
+}
+
+.input-text.input {
+    border: none;
+    color: gray;
+    padding: 4px;
+    border-radius: 4px;
+    text-align: center;
+    width: 60%;
+    height: 15px;
+    align-items: right;
+    display: flex;
+}
+
+.label-ref {
+    width: 100px
+}
+
+#user-picture {
+    margin: 5px
+}
+
+.button-primary {
+    height: 25px;
 }

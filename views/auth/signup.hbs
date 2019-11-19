@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/css/signup-signin.css">
 <section class="sign form-container">
     <header class="form-header">
         <h1 class="form-title">Get inspired and share your experiences</h1>
@@ -8,33 +9,33 @@
     {{/if}}
     <form method="post" action="/auth/signup" id="form_user">
         <div class="form-item-wrapper flexed-item">
-            <label for="name" class="label-ref label">Name</label>
+            <label for="name" class="label-ref">Name</label>
             <input id="name" name="name" type="text" class="input-text input" placeholder="name" required value="name">
         </div>
         <div class="form-item-wrapper flexed-item">
-            <label for="age" class="label-ref label">Age</label>
+            <label for="age" class="label-ref">Age</label>
             <input id="age" name="age" type="number" min="18" max="100" class="input-text input" placeholder="age"
                 required value="age">
         </div>
         <div class="form-item-wrapper flexed-item">
-            <label for="description" class="label-ref label">Description</label>
+            <label for="description" class="label-ref">Description</label>
             <input id="description" name="description" type="text-area" class="input-text input"
                 placeholder="description" required value="description">
         </div>
         <div class="form-item-wrapper flexed-item">
-            <label for="email" class="label-ref label">Email</label>
+            <label for="email" class="label-ref">Email</label>
             <input id="email" name="email" type="email" class="input-text input" placeholder="email" required value="">
         </div>
         <div class="form-item-wrapper flexed-item">
-            <label for="password" class="label-ref label">Password</label>
+            <label for="password" class="label-ref">Password</label>
             <input id="password" name="password" type="password" class="input-text input" placeholder="••••••" required
                 value="password">
         </div>
         <div class="form-item-wrapper flexed-item">
-            <label for="user-picture" class="label-price label">Picture</label>
+            <label for="user-picture" class="label-ref">Picture</label>
             <input id="user-picture" name="user-picture" type="file" class="user-picture">
         </div>
-        <button type="submit" class="button-primary white">Create Account</button>
+        <button type="submit" class="button-primary">Create Account</button>
     </form>
     <p class="form-sub-infos">Already have an account ? <a href="/auth/signin" class="button-link-form">Sign In</a></p>
 </section>
