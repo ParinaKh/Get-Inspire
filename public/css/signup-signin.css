@@ -24,7 +24,7 @@
     font-weight: 700;
     margin-bottom: .5rem;
     text-align: center;
-    text-shadow: white 0.1em 0.1em 0.2em;
+    text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 #form_user .form-item-wrapper:last-child {
@@ -54,7 +54,7 @@
 
 .form-subtitle {
     font-size: 1.5em;
-    text-shadow: white 0.1em 0.1em 0.2em;
+    text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 .form-sub-infos {

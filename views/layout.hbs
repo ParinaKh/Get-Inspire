@@ -20,9 +20,9 @@
 </head>
 
 <body>
-    {{!-- {{#if success_msg}}
-    <h1>{{toto}}</h1>
-    {{/if}} --}}
+    {{#if success_msg}}
+    <h1>{{succes_msg}}</h1>
+    {{/if}}
     <header class="header">
         <a href="/home"><img src="/images/logo-irontrip.jpg" id="logo"></a>
         <nav class="navbar">
@@ -30,13 +30,22 @@
                 <a class="nav-item active" href="/home">Home</a>
                 <a class="nav-item" href="/inspire-me">Inspire Me</a>
                 <a class="nav-item" href="/about">About</a>
+                {{#if isLoggedIn}}
                 <a class="nav-item" href="/manage/create-trip/" id="create-trip">Create my Trip</a>
+                {{/if}}
             </div>
             <div id="nav-right">
+                {{#if isLoggedIn}}
                 <img src="/images/like.png" alt="heart" id="logo-heart"><a class="nav-item" href="#">My
                     Favourite Trips</a>
+                {{/if}}
+                {{#unless isLoggedIn}}
                 <a class="nav-item" href="/auth/signin/">Sign In</a>
                 <a class="nav-item" href="/auth/signup/" id="signup">Sign Up</a>
+                {{/unless}}
+                {{#if isLoggedIn}}
+                <a class="nav-item" href="/auth/logout/">Sign Out</a>
+                {{/if}}
             </div>
         </nav>
     </header>
