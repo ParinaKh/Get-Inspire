@@ -84,7 +84,7 @@ router.post("/signin", (req, res) => {
         req.session.currentUser = user;
         res.render("inspire-me", { css: ["signup-signin", "layout"] });
       } else {
-        res.render("signin", {
+        res.redirect("/home", {
           msg: "Incorrect password"
         });
       }

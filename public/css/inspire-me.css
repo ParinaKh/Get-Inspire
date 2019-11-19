@@ -1,10 +1,32 @@
 
 /* Tags */
 
+.container-tags {
+  width: 39vw;
+}
 
+.header-inspire {
+  display: flex;
+  background: url("/images/background-canada.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  justify-items: center;
+  justify-content: center;
+}
 
+h1 {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 800;
+  width: 50%
+}
 
-
+.container-tags {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+}
 
 /* Trip Card */
 
