@@ -10,8 +10,8 @@ router.get("/create-trip", (req, res) => { // ! don't forget to add manage/creat
 
 router.post("/create-trip", uploader.single("pictureTrip"), (req, res, next) => {
     const newTrip = req.body
-    console.log(req.body);
-
+    if (req.file) newTrip.pictureTrip = req.file.secure_url
+    console.log(newTrip);
     tripModel
         .create(newTrip)
         .then(tripRes => {

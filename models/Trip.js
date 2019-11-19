@@ -29,7 +29,7 @@ const tripSchema = new Schema({
         type: String,
         enum: ["jan-mar", "apr-jun", "jul-sep", "oct-dec"],
     },
-    imageTrip: {
+    pictureTrip: {
         type: String,
         default: "https://i1.adis.ws/i/jpl/jd_333960_a?qlt=80&w=600&h=425&v=1&fmt=webp"
     },
