@@ -1,0 +1,36 @@
+.big-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    color: #008000;
+    -webkit-box-shadow: 3px 6px 24px -4px rgba(200,204,202,1);
+    -moz-box-shadow: 3px 6px 24px -4px rgba(200,204,202,1);
+    box-shadow: 3px 6px 24px -4px rgba(200,204,202,1);
+}
+.add-trip {
+    padding: 20px auto;
+    border-color: #008000;
+}
+
+.form-item {
+    padding: 10px 20px;
+}
+.form-item.thematics {
+    display: flex;
+    align-items: center;
+}
+
+.form-title {
+    text-align: center;
+}
+
+.select {
+    padding: 5px
+}
+
+.button-create-trip {
+    padding: 10px, 20px;
+}
+

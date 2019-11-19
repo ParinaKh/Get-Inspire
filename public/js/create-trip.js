@@ -1,0 +1,15 @@
+const btn = document.getElementById("btn_add_step");
+const list = document.getElementById("list_other_dest");
+
+
+const destTemplate = `<li><input name="otherStep" placeholder="add other step here" value="test val" /></li>`;
+
+
+function addStep(evt) {
+    evt.preventDefault();
+    console.log("clicked", list)
+    list.innerHTML += destTemplate;
+}
+
+
+btn.onclick = addStep;

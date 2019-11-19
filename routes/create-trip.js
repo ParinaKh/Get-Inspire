@@ -5,7 +5,7 @@ const uploader = require("./../config/cloudinary");
 
 // add protected route ?
 router.get("/create-trip", (req, res) => { // ! don't forget to add manage/create before create-trip
-    res.render("forms/create-trip", { css: ["layout"] });
+    res.render("forms/create-trip", { css: ["layout", "create-trip"], script: ["create-trip"] });
 });
 
 router.post("/create-trip", uploader.single("pictureTrip"), (req, res, next) => {
@@ -15,9 +15,9 @@ router.post("/create-trip", uploader.single("pictureTrip"), (req, res, next) => 
     tripModel
         .create(newTrip)
         .then(tripRes => {
-            console.log("yo yeey new trip created !");
-            console.log(req.body);
-            req.flash("success", "Proot proot")
+            // console.log("yo yeey new trip created !");
+            // console.log(req.body);
+            req.flash("success", "Trip created !")
             res.redirect("/manage/create-trip");
         })
         .catch(error => {

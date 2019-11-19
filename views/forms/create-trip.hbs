@@ -42,7 +42,7 @@
             </select>
         </div>
         <div class="form-item">
-            <label for="period" class="">period</label>
+            <label for="period" class="">Period</label>
             <select id="period" type="text" class="select" name="period">
                 <option value="-1" disabled selected>Choose a period</option>
                 <option value="jan-mar">Jan-Mar</option>
@@ -52,8 +52,8 @@
             </select>
         </div>
 
-        <div class="form-item">
-            <label for="thematics" class="">Thematics</label>
+        <div class="form-item thematics">
+            <label for="thematics" class="thematics-label">Thematics</label>
             <select id="thematics" type="text" class="select" name="thematics" multiple>
                 <option value="-1" disabled selected>Choose one or more thematics</option>
                 <option value="bagpacker">Bagpacker</option>
@@ -69,6 +69,13 @@
             <label for="picture">Picture</label>
             <input id="picture-trip" type="file" name="pictureTrip" class="picture-trip">
         </div>
+        <div class="form-item">
+            <label for="picture">add destination</label>
+            <button id="btn_add_step">ok</button>
+            <hr>
+            <ul id="list_other_step"></ul>
+        </div>
+
         <button class="button-create-trip">Add this trip</button>
     </form>
     {{!-- {{#if msg}}
