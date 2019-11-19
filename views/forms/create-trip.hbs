@@ -8,6 +8,11 @@
                 value="Safari family" required>
         </div>
         <div class="form-item">
+            <label for="mustSeeToAvoid">MustSee / To avoid : </label>
+            <input id="mustSeeToAvoid" type="text" class="" name="mustSeeToAvoid" placeholder="< 30 caracters"
+                value="Was greeaaaat">
+        </div>
+        <div class="form-item">
             <label for="destination" class="">Destination</label>
             <select id="destination" type="text" class="select" name="destination">
                 <option value="-1" disabled selected>Choose a country</option>
@@ -24,7 +29,6 @@
             <label for="budget" class="">Budget</label>
             <select id="budget" type="text" class="select" name="budget">
                 <option value="-1" disabled selected>Choose a budget</option>
-                {{!-- is it okay for write 0-500€ as a value ?? --}}
                 <option value="0-500€">0-500€</option>
                 <option value="500-1000€">500-1000€</option>
                 <option value=">1000€">>1000€</option>
@@ -65,16 +69,14 @@
             </select>
         </div>
         <div class="form-item">
-            <label for="picture">Picture</label>
+            <label for="picture">Cover Picture</label>
             <input id="picture-trip" type="file" name="pictureTrip" class="picture-trip">
         </div>
         <div class="form-item">
-            <label for="picture">add destination</label>
-            <button id="btn_add_step">ok</button>
-            <hr>
+            <label for="itinerary">My Itinerary: </label>
+            <button id="btn_add_step">Add step</button>
             <ul id="list_other_step"></ul>
         </div>
-
         <button class="button-create-trip">Add this trip</button>
     </form>
     {{!-- {{#if msg}}
