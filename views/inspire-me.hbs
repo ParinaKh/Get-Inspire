@@ -3,70 +3,171 @@
         by our community of Travellers !</h1>
 </header>
 {{!-- Tag cards --}}
-<div class="container-tags">
-    <div id="destination-tag">
+<main>
+    <div class="container-tags">
         <h2>Filter by Country</h2>
-        <div id="north-america-tag">
+        <div id="destination-tag" class="container-one-tag">
             <h3>America</h3>
-            <a class="filter-destination" data-name="destination" data-value="canada">Canada</a>
-            <a class="filter-destination" data-name="destination" data-value="etat-unis">Etats-unis</a>
-            <a class="filter-destination" data-name="destination" data-value="mexico">Mexico</a>
-            <a class="filter-destination" data-name="destination" data-value="peru">Peru</a>
+            <div>
+                <input id="canada" type="checkbox" class="input" name="destination">
+                <label for="destination" class="label">Canada</label>
+            </div>
+            <div>
+                <input id="etats-unis" type="checkbox" class="input" name="destination">
+                <label for="etats-unis" class="label">Etats-unis</label>
+            </div>
+            <div>
+                <input id="mexique" type="checkbox" class="input" name="destination">
+                <label for="mexique" class="label">Mexique</label>
+            </div>
+            <div id="asia-tag" class="tag-values">
+                <h3>Asia</h3>
+                <div>
+                    <input id="japon" type="checkbox" class="input" name="destination">
+                    <label for="destination" class="label">Japon</label>
+                </div>
+                <div>
+                    <input id="laos" type="checkbox" class="input" name="destination">
+                    <label for="destination" class="label">Laos</label>
+                </div>
+                <div>
+                    <input id="srilanka" type="checkbox" class="input" name="destination">
+                    <label for="destination" class="label">Srilanka</label>
+                </div>
+                <div>
+                    <input id="thailande" type="checkbox" class="input" name="destination">
+                    <label for="destination" class="label">Thailande</label>
+                </div>
+            </div>
+            <div id="europe-tag" class="tag-values">
+                <h3>Europe</h3>
+                <div>
+                    <input id="norway" type="checkbox" class="input" name="destination">
+                    <label for="destination" class="label">Norway</label>
+                </div>
+                <div>
+                    <input id="england" type="checkbox" class="input" name="destination">
+                    <label for="destination" class="label">England</label>
+                </div>
+                <div>
+                    <input id="denmark" type="checkbox" class="input" name="destination">
+                    <label for="destination" class="label">Denmark</label>
+                </div>
+                <div>
+                    <input id="russia" type="checkbox" class="input" name="destination">
+                    <label for="destination" class="label">Russia</label>
+                </div>
+            </div>
+            <div id="africa-tag" class="tag-values">
+                <h3>Africa</h3>
+                <div>
+                    <input id="maroc" type="checkbox" class="input" name="destination">
+                    <label for="destination" class="label">Maroc</label>
+                </div>
+                <div>
+                    <input id="tunisie" type="checkbox" class="input" name="destination">
+                    <label for="destination" class="label">Tunisie</label>
+                </div>
+                <div>
+                    <input id="senegal" type="checkbox" class="input" name="destination">
+                    <label for="destination" class="label">Senegal</label>
+                </div>
+                <div>
+                    <input id="afriquedusud" type="checkbox" class="input" name="destination">
+                    <label for="destination" class="label">Afrique du Sud</label>
+                </div>
+            </div>
         </div>
-        <div id="asia-tag">
-            <h3>Asia</h3>
-            <a class="filter-destination" data-name="destination" data-value="india">India</a>
-            <a class="filter-destination" data-name="destination" data-value="laos">Laos</a>
-            <a class="filter-destination" data-name="destination" data-value="japon">Japon</a>
-            <a class="filter-destination" data-name="destination" data-value="srilanka">Sri-lanka</a>
+        <h2>Filter by Period</h2>
+        <div id="period-tag" class="container-one-tag">
+            <div>
+                <input id="period" type="checkbox" class="input" name="period">
+                <label for="period" class="label">Janv-Mar</label>
+            </div>
+            <div>
+                <input id="period" type="checkbox" class="input" name="period">
+                <label for="period" class="label">Apr-Jun</label>
+            </div>
+            <div>
+                <input id="period" type="checkbox" class="input" name="period">
+                <label for="period" class="label">Jul-Sept</label>
+            </div>
+            <div>
+                <input id="period" type="checkbox" class="input" name="period">
+                <label for="period" class="label">Oct-Dec</label>
+            </div>
         </div>
-        <div id="europe-tag">
-            <h3>Europe</h3>
-            <a class="filter-destination" data-name="destination" data-value="denmark">Denmark</a>
-            <a class="filter-destination" data-name="destination" data-value="england">England</a>
-            <a class="filter-destination" data-name="destination" data-value="italia">Italia</a>
-            <a class="filter-destination" data-name="destination" data-value="russia">Russia</a>
+        <h2>Filter by Duration</h2>
+        <div id="duration-tag" class="container-one-tag">
+            <div>
+                <input id="duration" type="checkbox" class="input" name="duration">
+                <label for="period" class="label">Week-end</label>
+            </div>
+            <div>
+                <input id="period" type="checkbox" class="input" name="duration">
+                <label for="duration" class="label">1 week</label>
+            </div>
+            <div>
+                <input id="duration" type="checkbox" class="input" name="duration">
+                <label for="duration" class="label">2 weeks</label>
+            </div>
+            <div>
+                <input id="duration" type="checkbox" class="input" name="duration">
+                <label for="duration" class="label">> 2 weeks</label>
+            </div>
         </div>
-        <div id="africa-tag">
-            <h3>Africa</h3>
-            <a class="filter-destination" data-name="destination" data-value="morroco">Morroco</a>
-            <a class="filter-destination" data-name="destination" data-value="tunisia">Tunisia</a>
-            <a class="filter-destination" data-name="destination" data-value="senegal">Senegal</a>
-            <a class="filter-destination" data-name="destination" data-value="southafrica">South Africa</a>
+        <h2>Filter by Budget per day</h2>
+        <div id="budget-tag" class="container-one-tag">
+            <div>
+                <input id="budget" type="checkbox" class="input" name="budget">
+                <label for="period" class="label">0€-500€</label>
+            </div>
+            <div>
+                <input id="period" type="checkbox" class="input" name="budget">
+                <label for="budget" class="label">500€-1000€</label>
+            </div>
+            <div>
+                <input id="budget" type="checkbox" class="input" name="budget">
+                <label for="budget" class="label">> 1000€</label>
+            </div>
+            <div>
+                <input id="budget" type="checkbox" class="input" name="budget">
+                <label for="budget" class="label">> 2 weeks</label>
+            </div>
+        </div>
+        <h2>Filter by Thematic</h2>
+        <div id="thematic-tag" class="container-one-tag">
+            <div>
+                <input id="thematic" type="checkbox" class="input" name="thematics">
+                <label for="period" class="label">Bagpacker</label>
+            </div>
+            <div>
+                <input id="period" type="checkbox" class="input" name="thematics">
+                <label for="thematics" class="label">Luxury</label>
+            </div>
+            <div>
+                <input id="thematics" type="checkbox" class="input" name="thematics">
+                <label for="thematics" class="label">Nature</label>
+            </div>
+            <div>
+                <input id="thematics" type="checkbox" class="input" name="thematics">
+                <label for="thematics" class="label">All-inclusive</label>
+            </div>
+            <div>
+                <input id="thematics" type="checkbox" class="input" name="thematics">
+                <label for="period" class="label">Food Lover</label>
+            </div>
+            <div>
+                <input id="period" type="checkbox" class="input" name="thematics">
+                <label for="thematics" class="label">Culture</label>
+            </div>
         </div>
     </div>
-    <h2>Filter by Period</h2>
-    <div id="period-tag">
-        <a class="filter-period" data-name="period" data-value="janv-mar">Jan-Mar</a>
-        <a class="filter-period" data-name="period" data-value="apr-jun">Apr-Jun</a>
-        <a class="filter-period" data-name="period" data-value="jul-sep">Jul-Sep</a>
-        <a class="filter-period" data-name="period" data-value="oct-dec">Oct-Dec</a>
-    </div>
-    <h2>Filter by Duration</h2>
-    <div id="duration-tag">
-        <a class="filter-duration" data-name="duration" data-value="week-end">Week-end</a>
-        <a class="filter-duration" data-name="duration" data-value="1 week">1 week</a>
-        <a class="filter-duration" data-name="duration" data-value="2 weeks">2 weeks</a>
-        <a class="filter-duration" data-name="duration" data-value="sup 2 weeks"> > 2 weeks</a>
-    </div>
-    <h2>Filter by Budget</h2>
-    <div id="budget-tag">
-        <a class="filter-budget" data-name="budget" data-value="week-end">0-500€</a>
-        <a class="filter-budget" data-name="budget" data-value="1 week">500-1000€</a>
-        <a class="filter-budget" data-name="budget" data-value="sup to 1000">> 1000€</a>
-    </div>
-    <h2>Filter by Thematic</h2>
-    <div id="thematic-tag">
-        <a class="filter-thematic" data-name="thematic" data-value="bagpacker">Bagpacker</a>
-        <a class="filter-thematic" data-name="thematic" data-value="bagpacker">Luxury</a>
-        <a class="filter-thematic" data-name="thematic" data-value="bagpacker">Nature</a>
-        <a class="filter-thematic" data-name="thematic" data-value="bagpacker">All-Inclusive</a>
-        <a class="filter-thematic" data-name="thematic" data-value="bagpacker">Foodlover</a>
-        <a class="filter-thematic" data-name="thematic" data-value="bagpacker">Culture</a>
-    </div>
-</div>
 
-{{!-- Trip cards --}}
-<div class="container">
-    {{> trip_card}}
-</div>
+
+    {{!-- Trip cards --}}
+    <div class="container">
+        {{> trip_card}}
+    </div>
+
+</main>
