@@ -39,8 +39,10 @@
                 <img src="/images/like.png" alt="heart" id="logo-heart"><a class="nav-item" href="#">My
                     Favourite Trips</a>
                 {{/if}}
+                {{#unless isLoggedIn}}
                 <a class="nav-item" href="/auth/signin/">Sign In</a>
                 <a class="nav-item" href="/auth/signup/" id="signup">Sign Up</a>
+                {{/unless}}
                 {{#if isLoggedIn}}
                 <a class="nav-item" href="/auth/logout/">Sign Out</a>
                 {{/if}}
