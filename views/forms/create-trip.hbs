@@ -1,23 +1,24 @@
 <div class="big-container">
-    <form action="/manage/create-trip" method="post" class="add-trip" enctype="multipart/form-data">
-
+    <form action="/manage/create-trip" method="post" class="add-trip">
+        {{!-- enctype="multipart/form-data" --}}
         <h3 class="form-title">Add a new trip</h3>
 
         <div class="form-item">
             <label for="description" class="">Short description</label>
-            <input id="description" type="text" class="" name="description" placeholder="< 30 caracters" required>
+            <input id="description" type="text" class="" name="description" placeholder="< 30 caracters"
+                value="Safari family" required>
         </div>
         <div class="form-item">
             <label for="destination" class="">Destination</label>
             <select id="destination" type="text" class="select" name="destination">
                 <option value="-1" disabled selected>Choose a country</option>
-                <option value="Mexique">Mexico</option>
+                <option value="Mexico">Mexico</option>
                 <option value="Laos">Laos</option>
                 <option value="Norway">Norway</option>
                 <option value="France">France</option>
                 <option value="Italy">Italy</option>
                 <option value="Canada">Canada</option>
-                <option value="South Africa">South Africa</option>
+                <option value="SouthAfrica">South Africa</option>
             </select>
         </div>
         <div class="form-item">
@@ -35,41 +36,33 @@
             <select id="duration" type="text" class="select" name="duration">
                 <option value="-1" disabled selected>Choose a duration</option>
                 <option value="week-end">week-end</option>
-                <option value="1 week">1 week</option>
-                <option value="2 weeks">2 weeks</option>
-                <option value="> 2 weeks">> 2 weeks</option>
+                <option value="1week">1 week</option>
+                <option value="2weeks">2 weeks</option>
+                <option value=">2weeks">> 2 weeks</option>
             </select>
         </div>
         <div class="form-item">
             <label for="period" class="">period</label>
             <select id="period" type="text" class="select" name="period">
                 <option value="-1" disabled selected>Choose a period</option>
-                <option value="Jan-Mar">Jan-Mar</option>
-                <option value="Apr-Jun">Apr-Jun</option>
-                <option value="Jul-Sep">Jul-Sep</option>
-                <option value="Oct-Dec">Oct-Dec</option>
+                <option value="jan-mar">Jan-Mar</option>
+                <option value="apr-jun">Apr-Jun</option>
+                <option value="jul-sep">Jul-Sep</option>
+                <option value="oct-dec">Oct-Dec</option>
             </select>
         </div>
-        <div class="form-item">
-            {{!-- Eventually we need to upload more than 1 image .... --}}
-            <label for="imageTrip" class="">Image</label>
-            <input id="imageTrip" type="file" class="" name="image">
-        </div>
-        {{!-- <div class="form-item">
-            <label for="tags" class="label">Tags</label>
-            {{> form_tags_select}}
-        </div> --}}
+
         <div class="form-item">
             <label for="thematics" class="">Thematics</label>
             <select id="thematics" type="text" class="select" name="thematics" multiple>
                 <option value="-1" disabled selected>Choose one or more thematics</option>
-                <option value="Bagpacker">Bagpacker</option>
-                <option value="Luxe">Luxe</option>
-                <option value="Nature">Nature</option>
-                <option value="All-inclusive">All-inclusive</option>
-                <option value="Foodlover">Foodlover</option>
-                <option value="Sportif">Sportif</option>
-                <option value="Culture">Culture</option>
+                <option value="bagpacker">Bagpacker</option>
+                <option value="luxe">Luxe</option>
+                <option value="nature">Nature</option>
+                <option value="all-inclusive">All-inclusive</option>
+                <option value="foodlover">Foodlover</option>
+                <option value="sportif">Sportif</option>
+                <option value="culture">Culture</option>
             </select>
         </div>
         <button class="button-create-trip">Add this trip</button>

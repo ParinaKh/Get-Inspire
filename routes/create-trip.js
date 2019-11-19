@@ -1,14 +1,15 @@
 const express = require("express");
-const router = express.Router();
-
+const router = new express.Router();
 const tripModel = require("../models/Trip");
 
 // add protected route ?
-router.get("/create-trip", (req, res, next) => { // ! don't forget to add manage/create before create-trip
-    res.render("forms/create-trip");
+router.get("/create-trip", (req, res) => { // ! don't forget to add manage/create before create-trip
+    res.render("forms/create-trip", { css: ["layout"] });
 });
 
-router.post("/create-trip", (req, res, next) => {
+router.post("/create-trip", (req, res) => {
+    console.log("req.body");
+    console.log(req.body);
     // ne pas oublier en middleware le uploader.single("image") pour l'image..
     const description = req.body.description;
     const destination = req.body.destination;
@@ -29,9 +30,9 @@ router.post("/create-trip", (req, res, next) => {
             thematics
         })
         .then(tripRes => {
-            console.log("yeey new trip created !");
+            console.log("yo yeey new trip created !");
             console.log(req.body);
-            res.render("forms/create-trip", { trip: tripRes, css: ["create-trip"] });
+            res.redirect("/home");
         })
         .catch(error => {
             console.log(error, ": trip not created :( ");

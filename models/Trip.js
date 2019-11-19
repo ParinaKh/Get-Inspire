@@ -15,27 +15,27 @@ const tripSchema = new Schema({
     description: String, // max length on attribute (>30 letters)
     destination: {
         type: String,
-        enum: ["Mexique", "Laos", "Norvège", "France", "Italie", "Canada", "Afrique du Sud"],
+        enum: ["Mexico", "Laos", "Norway", "France", "Italy", "Canada", "SouthAfrica"],
     },
     budget: {
         type: String,
-        enum: ["0-500€", "500-1000€", "> 1000€"],
+        enum: ["0-500€", "500-1000€", ">1000€"],
     },
     duration: {
         type: String,
-        enum: ["week-end", "1 semaine", "2 semaines", "> 2 semaines"],
+        enum: ["week-end", "1week", "2weeks", ">2weeks"],
     },
     period: {
         type: String,
-        enum: ["janv-mars", "avril-juin", "juillet-septembre", "octobre-decembre"],
+        enum: ["jan-mar", "apr-jun", "jul-sep", "oct-dec"],
     },
     // imageTrip: { // il faudra pouvoir l'uploader après, en mettant dans ma route en middleware : uploader.single("image") cf .dashboard sneakers
     //     type: String,
     //     default: "https://i1.adis.ws/i/jpl/jd_333960_a?qlt=80&w=600&h=425&v=1&fmt=webp"
     // },
-    tags: {
+    thematics: {
         type: String,
-        enum: ["bagpacker", "luxe", "nature", "all-in", "foodlover", "sportif", "culture"],// on pourra en selectionner plusieurs dans le form
+        enum: ["bagpacker", "luxe", "nature", "all-inclusive", "foodlover", "sportif", "culture"],// on pourra en selectionner plusieurs dans le form
     }
 });
 
