@@ -12,6 +12,7 @@ const session = require("express-session");
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 const cookieParser = require("cookie-parser");
+const flash = require("connect-flash");
 
 // initial config
 app.set("view engine", "hbs");
@@ -21,6 +22,7 @@ hbs.registerPartials(__dirname + "/views/partials");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+
 
 // SESSION SETUP
 app.use(
@@ -35,6 +37,15 @@ app.use(
     resave: true
   })
 );
+
+app.use(flash());
+app.use(function exposeFlashMessage(req, res, next) {
+  // res.locals.success_msg = req.flash("success");
+  res.locals.success_msg = req.flash("success");
+  res.locals.error_msg = req.flash("error");
+  next();
+});
+
 
 app.locals.site_url = process.env.SITE_URL;
 // used in front end to perform ajax request (var instead of hardcoded)

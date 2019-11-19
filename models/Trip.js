@@ -29,10 +29,10 @@ const tripSchema = new Schema({
         type: String,
         enum: ["jan-mar", "apr-jun", "jul-sep", "oct-dec"],
     },
-    // imageTrip: { // il faudra pouvoir l'uploader après, en mettant dans ma route en middleware : uploader.single("image") cf .dashboard sneakers
-    //     type: String,
-    //     default: "https://i1.adis.ws/i/jpl/jd_333960_a?qlt=80&w=600&h=425&v=1&fmt=webp"
-    // },
+    imageTrip: { // il faudra pouvoir l'uploader après, en mettant dans ma route en middleware : uploader.single("image") cf .dashboard sneakers
+        type: String,
+        default: "https://i1.adis.ws/i/jpl/jd_333960_a?qlt=80&w=600&h=425&v=1&fmt=webp"
+    },
     thematics: {
         type: String,
         enum: ["bagpacker", "luxe", "nature", "all-inclusive", "foodlover", "sportif", "culture"],// on pourra en selectionner plusieurs dans le form

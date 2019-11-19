@@ -1,38 +1,24 @@
 const express = require("express");
 const router = new express.Router();
 const tripModel = require("../models/Trip");
+const uploader = require("./../config/cloudinary");
 
 // add protected route ?
 router.get("/create-trip", (req, res) => { // ! don't forget to add manage/create before create-trip
     res.render("forms/create-trip", { css: ["layout"] });
 });
 
-router.post("/create-trip", (req, res) => {
-    console.log("req.body");
+router.post("/create-trip", uploader.single("pictureTrip"), (req, res, next) => {
+    const newTrip = req.body
     console.log(req.body);
-    // ne pas oublier en middleware le uploader.single("image") pour l'image..
-    const description = req.body.description;
-    const destination = req.body.destination;
-    const budget = req.body.budget;
-    const duration = req.body.duration;
-    const period = req.body.period;
-    // const imageTrip = req.body.imageTrip;
-    const thematics = req.body.thematics;
 
     tripModel
-        .create({
-            description,
-            destination,
-            budget,
-            duration,
-            period,
-            // imageTrip,
-            thematics
-        })
+        .create(newTrip)
         .then(tripRes => {
             console.log("yo yeey new trip created !");
             console.log(req.body);
-            res.redirect("/home");
+            req.flash("success", "Proot proot")
+            res.redirect("/manage/create-trip");
         })
         .catch(error => {
             console.log(error, ": trip not created :( ");
