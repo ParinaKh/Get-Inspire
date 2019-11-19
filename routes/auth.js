@@ -82,7 +82,7 @@ router.post("/signin", (req, res) => {
       if (bcrypt.compareSync(thePassword, user.password)) {
         // Save the login in the session!
         req.session.currentUser = user;
-        res.render("inspire-me", { css: ["signup-signin", "layout"] });
+        res.redirect("/home");
       } else {
         res.redirect("/home", {
           msg: "Incorrect password"
@@ -97,7 +97,7 @@ router.post("/signin", (req, res) => {
 router.get("/logout", (req, res, next) => {
   req.session.destroy(err => {
     res.locals.isLoggedIn = false;
-    res.redirect("/auth/signin", { css: ["signup-signin", "layout"] });
+    res.redirect("/auth/signin");
   });
 });
 
