@@ -33,12 +33,14 @@
 }
 
 .button-create-trip {
-    padding: 10px, 20px;
+    padding: 10px 20px;
     text-align: center;
     color: white;
     background-color: #1474D0;
     border-radius: 5px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2)
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    margin: 10px auto;
+    display: block;
 }
 
 .button-create-trip:hover {
@@ -46,6 +48,9 @@
 }
 
 .form-item label {
+    font-size: 14px;
+    width: 150px;
+    display: inline-block;
     padding: 0px 10px;
 }
 
