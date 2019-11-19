@@ -1,0 +1,22 @@
+<div class="trip-cards">
+    {{#each user}}
+    <div id="container-image-card"><img class="picture-card">{{this.picture}}/></div>
+    <div id="container-text-card">
+        <h3>Travel like {{this.name}} to:</h3>
+        {{/each}}
+        {{#each travel}}
+        <h2>{{this.destination}}</h2>
+        {{/each}}
+        {{#each user}}
+        <p class="description-card">{{this.description}}</p>
+        {{/each}}
+        {{#each travel}}
+        <hr>
+        <div class="travel-infos-card">
+            <p>{{this.duration}}</p>
+            <p>{{this.budget}}</p>
+            <p>{{this.period}}</p>
+        </div>
+        {{/each}}
+    </div>
+</div>

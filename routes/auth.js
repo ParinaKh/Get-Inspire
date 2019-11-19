@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
 router.get("/signup", (req, res) => {
-  res.render("signup");
+  res.render("auth/signup");
 });
 
 router.post("/signup", (req, res, next) => {
@@ -23,7 +23,8 @@ router.post("/signup", (req, res, next) => {
     password === ""
   ) {
     res.render("signup", {
-      msg: "Indicate a username and a password to sign up"
+      msg: "Indicate a username and a password to sign up",
+      css: ["signup-signin"]
     });
     return;
   }
@@ -34,7 +35,8 @@ router.post("/signup", (req, res, next) => {
     .then(user => {
       if (user !== null) {
         res.render("signup", {
-          msg: "The email already exists!"
+          msg: "The email already exists!",
+          css: ["signup-signin"]
         });
         return;
       }
@@ -52,7 +54,7 @@ router.post("/signup", (req, res, next) => {
           password: hashPass
         })
         .then(userRes => {
-          res.render("signin", { user: userRes });
+          res.render("auth/signin", { user: userRes, css: ["signup-signin"] });
         })
         .catch(error => {
           console.log(error);
@@ -64,7 +66,7 @@ router.post("/signup", (req, res, next) => {
 });
 
 router.get("/signin", (req, res) => {
-  res.render("signin");
+  res.render("auth/signin");
 });
 
 router.post("/signin", (req, res) => {
@@ -73,7 +75,8 @@ router.post("/signin", (req, res) => {
 
   if (theEmail === "" || thePassword === "") {
     res.render("signin", {
-      msg: "Please enter both, email and password to sign in."
+      msg: "Please enter both, email and password to sign in.",
+      css: ["signup-signin"]
     });
     return;
   }
@@ -83,17 +86,19 @@ router.post("/signin", (req, res) => {
     .then(user => {
       if (!user) {
         res.render("signin", {
-          msg: "The email doesn't exist."
+          msg: "The email doesn't exist.",
+          css: ["signup-signin"]
         });
         return;
       }
       if (bcrypt.compareSync(thePassword, user.password)) {
         // Save the login in the session!
         req.session.currentUser = user;
-        res.redirect("/");
+        res.redirect("/inspire-me");
       } else {
         res.render("signin", {
-          msg: "Incorrect password"
+          msg: "Incorrect password",
+          css: ["signup-signin"]
         });
       }
     })
