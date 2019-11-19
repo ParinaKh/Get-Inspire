@@ -3,56 +3,48 @@ const router = new express.Router();
 const userModel = require("../models/User");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
+const uploader = require("./../config/cloudinary");
 
 router.get("/signup", (req, res) => {
   res.render("auth/signup", { css: ["signup-signin", "layout"] });
 });
 
-router.post("/signup", (req, res, next) => {
-  const name = req.body.name;
-  const age = req.body.age;
-  const description = req.body.description;
-  const email = req.body.email;
-  const password = req.body.password;
+router.post("/signup", uploader.single("userpicture"), (req, res, next) => {
+  const newUser = req.body;
+  //   const newUser = {
+  //     name: req.body.name,
+  //     age: req.body.age,
+  //     description: req.body.description,
+  //     email: req.body.email,
+  //     password: req.body.password
+  //   };
 
-  if (
-    name === "" ||
-    age === "" ||
-    description === "" ||
-    email === "" ||
-    password === ""
-  ) {
-    res.render("signup", {
-      msg: "Indicate a username and a password to sign up"
-    });
-    return;
+  if (req.file) {
+    newUser.userpicture = req.file.secure_url;
   }
+
   userModel
     .findOne({
-      email: email
+      email: newUser.email
     })
     .then(user => {
       if (user !== null) {
-        res.render("signup", {
+        res.redirect("/inspire-me", {
+          css: ["signup-signin", "layout"],
           msg: "The email already exists!"
         });
         return;
       }
       const salt = bcrypt.genSaltSync(bcryptSalt);
-      const hashPass = bcrypt.hashSync(password, salt);
-      //user.password = hashed;
+      const hashed = bcrypt.hashSync(newUser.password, salt);
+      newUser.password = hashed;
 
       //console.log(req.body);
       userModel
-        .create({
-          name,
-          age,
-          description,
-          email,
-          password: hashPass
-        })
+        .create(newUser)
         .then(userRes => {
-          res.render("auth/signin", { user: userRes });
+          req.session.currentUser = userRes;
+          res.redirect("/home");
         })
         .catch(error => {
           console.log(error);
@@ -90,7 +82,7 @@ router.post("/signin", (req, res) => {
       if (bcrypt.compareSync(thePassword, user.password)) {
         // Save the login in the session!
         req.session.currentUser = user;
-        res.redirect("/inspire-me");
+        res.render("inspire-me", { css: ["signup-signin", "layout"] });
       } else {
         res.render("signin", {
           msg: "Incorrect password"
@@ -102,11 +94,11 @@ router.post("/signin", (req, res) => {
     });
 });
 
-// router.get("/logout", (req, res, next) => {
-//   req.session.destroy(err => {
-//     // cannot access session here
-//     res.redirect("/auth/signin", { css: ["signup-signin", "layout"] });
-//   });
-// });
+router.get("/logout", (req, res, next) => {
+  req.session.destroy(err => {
+    res.locals.isLoggedIn = false;
+    res.redirect("/auth/signin", { css: ["signup-signin", "layout"] });
+  });
+});
 
 module.exports = router;
