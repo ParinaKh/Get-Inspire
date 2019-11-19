@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: space-between;
     justify-items: center;
-    margin: 15px;
+    margin: 15px 20px 0 15px;
 }
 
 #logo {
@@ -39,7 +39,13 @@ body {
     color: rgb(128, 124, 124);
 }
 
-#create-travel {
+#logo-heart {
+    width: 15px;
+    position: relative;
+    top: 2px;
+}
+
+#create-trip {
     color: #1475d0;
 }
 
