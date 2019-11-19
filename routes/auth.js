@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
 router.get("/signup", (req, res) => {
-  res.render("auth/signup");
+  res.render("auth/signup", { css: ["signup-signin", "layout"] });
 });
 
 router.post("/signup", (req, res, next) => {
@@ -23,8 +23,7 @@ router.post("/signup", (req, res, next) => {
     password === ""
   ) {
     res.render("signup", {
-      msg: "Indicate a username and a password to sign up",
-      css: ["signup-signin"]
+      msg: "Indicate a username and a password to sign up"
     });
     return;
   }
@@ -35,8 +34,7 @@ router.post("/signup", (req, res, next) => {
     .then(user => {
       if (user !== null) {
         res.render("signup", {
-          msg: "The email already exists!",
-          css: ["signup-signin"]
+          msg: "The email already exists!"
         });
         return;
       }
@@ -54,7 +52,7 @@ router.post("/signup", (req, res, next) => {
           password: hashPass
         })
         .then(userRes => {
-          res.render("auth/signin", { user: userRes, css: ["signup-signin"] });
+          res.render("auth/signin", { user: userRes });
         })
         .catch(error => {
           console.log(error);
@@ -66,7 +64,7 @@ router.post("/signup", (req, res, next) => {
 });
 
 router.get("/signin", (req, res) => {
-  res.render("auth/signin");
+  res.render("auth/signin", { css: ["signup-signin", "layout"] });
 });
 
 router.post("/signin", (req, res) => {
@@ -75,8 +73,7 @@ router.post("/signin", (req, res) => {
 
   if (theEmail === "" || thePassword === "") {
     res.render("signin", {
-      msg: "Please enter both, email and password to sign in.",
-      css: ["signup-signin"]
+      msg: "Please enter both, email and password to sign in."
     });
     return;
   }
@@ -86,8 +83,7 @@ router.post("/signin", (req, res) => {
     .then(user => {
       if (!user) {
         res.render("signin", {
-          msg: "The email doesn't exist.",
-          css: ["signup-signin"]
+          msg: "The email doesn't exist."
         });
         return;
       }
@@ -97,8 +93,7 @@ router.post("/signin", (req, res) => {
         res.redirect("/inspire-me");
       } else {
         res.render("signin", {
-          msg: "Incorrect password",
-          css: ["signup-signin"]
+          msg: "Incorrect password"
         });
       }
     })
@@ -107,11 +102,11 @@ router.post("/signin", (req, res) => {
     });
 });
 
-router.get("/logout", (req, res, next) => {
-  req.session.destroy(err => {
-    // cannot access session here
-    res.redirect("/auth/signin");
-  });
-});
+// router.get("/logout", (req, res, next) => {
+//   req.session.destroy(err => {
+//     // cannot access session here
+//     res.redirect("/auth/signin", { css: ["signup-signin", "layout"] });
+//   });
+// });
 
 module.exports = router;
