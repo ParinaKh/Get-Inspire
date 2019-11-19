@@ -15,7 +15,7 @@ const tripSchema = new Schema({
     description: String, // max length on attribute (>30 letters)
     destination: {
         type: String,
-        enum: ["Mexico", "Laos", "Norway", "France", "Italy", "Canada", "SouthAfrica"],
+        enum: ["Mexico", "Morocco", "Laos", "Norway", "Denmark", "England", "France", "Italy", "Canada", "SouthAfrica", "Peru", "United states", "Japan", "Tunisia", "Senegal", "Sri Lanka", "Thailand", "Russia"],
     },
     budget: {
         type: String,
