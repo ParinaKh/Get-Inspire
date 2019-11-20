@@ -9,19 +9,11 @@ router.get("/inspire-me", (req, res) => {
             path: "user",
         })
         .then(dbRes => {
-            res.render("inspire-me", { css: ["inspire-me", "layout"], js: ["inspire-me-script"], trip: dbRes });
+            res.render("inspire-me", { css: ["inspire-me", "layout"], script: ["inspire-me-script"], trip: dbRes });
         })
         .catch(dbErr => console.error(dbErr))
 });
 
-router.post("add-favourite", (req, res) => {
-    userModel.findOneAndUpdate(req.session.currentUser.id)
-        .populate("trip")
-        .then(dbRes => {
-            res.send({ user: dbRes });
-        })
-        .catch(dbErr => console.error(dbErr));
-});
 
 
 

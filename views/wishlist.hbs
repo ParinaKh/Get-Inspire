@@ -1,0 +1,29 @@
+<h1>{{this.user.name}}this is a selection of all your favourite trips !</h1>
+
+<div class="container-all-trip-cards">
+    {{#each trip}}
+    <div class="trip-cards">
+        <div id="picture-card">
+            <i data-id="{{this._id}}" class="fas fa-heart"></i>
+            <img src="{{this.pictureTrip}}" />
+        </div>
+        <div id="container-text-card">
+            <!-- Favorite button HTML copied from generated WP Plugin HTML -->
+            <img class="user-picture" src="{{this.user.userpicture}}">
+            <h2>{{this.destination}}</h2>
+            <h3>Get Inspired by {{this.user.name}}</h3>
+            <div id="tags-card-trip">
+                <em>Trip mood:</em>
+                {{#each this.thematics}}
+                <span>{{this}},</span>
+                {{/each}}
+            </div>
+            <div class="travel-infos-card">
+                <span>{{this.duration}}</span>
+                <span>{{this.budget}}</span>
+                <span>{{this.period}}</span>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

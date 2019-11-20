@@ -164,11 +164,12 @@
         </div>
     </div>
     {{!-- Trip cards --}}
-    <div class="container-all-trip-cards">
+    {{> trip_card}}
+    {{!-- <div class="container-all-trip-cards">
         {{#each trip}}
         <div class="trip-cards">
             <div id="picture-card">
-                <i class="far fa-heart"></i>
+                <i data-id="{{this._id}}" class="clicked-heart" class="fas fa-heart"></i>
                 <img src="{{this.pictureTrip}}" />
             </div>
             <div id="container-text-card">
@@ -188,9 +189,8 @@
                     <span>{{this.period}}</span>
                 </div>
             </div>
-            {{!-- <div id="favourite">Add to favourite<span id="heart"></span></div> --}}
         </div>
 
         {{/each}}
-    </div>
+    </div> --}}
 </main>

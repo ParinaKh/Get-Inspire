@@ -21,6 +21,7 @@ app.set("views", __dirname + "/views");
 app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
+hbs.registerPartials(path.join(__dirname, "views/partials"));
 app.use(express.json());
 app.use(cookieParser());
 
@@ -64,7 +65,7 @@ function checkloginStatus(req, res, next) {
 
 function eraseSessionMessage() {
   var count = 0; // initialize counter in parent scope and use it in inner function
-  return function(req, res, next) {
+  return function (req, res, next) {
     if (req.session.msg) {
       // only increment if session contains msg
       if (count) {
@@ -102,7 +103,8 @@ const tripRouter = require("./routes/trip");
 app.use("/trip", tripRouter);
 
 const wishlistRouter = require("./routes/wishlist");
-app.use("/wishlist", wishlistRouter);
+app.use("/", wishlistRouter);
+
 const itinerary = require("./routes/Itinerary-temporary");
 app.use(itinerary);
 

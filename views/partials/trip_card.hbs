@@ -1,22 +1,32 @@
-{{!-- <div class="trip-cards">
+<div class="container-all-trip-cards">
     {{#each trip}}
-    <div id="container-image-card"><img class="picture-card">{{this.pictureTrip}}/>
+    <div class="trip-cards">
+        <div id="picture-card">
+            <i data-id="{{this._id}}" class="fas fa-heart"></i>
+            <img src="{{this.pictureTrip}}" />
+        </div>
+        <div id="container-text-card">
+            <!-- Favorite button HTML copied from generated WP Plugin HTML -->
+            <img class="user-picture" src="{{this.user.userpicture}}">
+            <h2>{{this.destination}}</h2>
+            <h3>Get Inspired by {{this.user.name}}</h3>
+            <div id="tags-card-trip">
+                <em>Trip mood:</em>
+                {{#each this.thematics}}
+                <span>{{this}},</span>
+                {{/each}}
+            </div>
+            <div class="travel-infos-card">
+                <span>{{this.duration}}</span>
+                <span>{{this.budget}}</span>
+                <span>{{this.period}}</span>
+            </div>
+            <div class="call-chevron">
+                <i class="fas fa-chevron-right"></i>
+                <a id="cta" href="/trip/{{this.user.id}}">Discover now !</a>
+            </div>
+
+        </div>
     </div>
     {{/each}}
-    <div id="container-text-card">
-        {{#each trip}}
-        <h3>Travel like {{this.name}} to:</h3>
-        {{/each}}
-        {{#each trip}}
-        <h2>{{this.destination}}</h2>
-        {{/each}}
-        {{#each trip}}
-        <hr>
-        <div class="travel-infos-card">
-            <p>{{this.duration}}</p>
-            <p>{{this.budget}}</p>
-            <p>{{this.period}}</p>
-        </div>
-        {{/each}}
-    </div>
-</div> --}}
+</div>

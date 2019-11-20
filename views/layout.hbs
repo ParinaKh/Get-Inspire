@@ -34,16 +34,16 @@
         <a href="/home"><img src="/images/logo-irontrip.jpg" id="logo"></a>
         <nav class="navbar">
             <div id="nav-left">
-                <a class="nav-item active" href="/home">Home</a>
+                {{!-- <a class="nav-item active" href="/home">Home</a> --}}
                 <a class="nav-item" href="/inspire-me">Inspire Me</a>
-                <a class="nav-item" href="/about">About</a>
+                {{!-- <a class="nav-item" href="/about">About</a> --}}
                 {{#if isLoggedIn}}
                 <a class="nav-item" href="/manage/create-trip/" id="create-trip">Create my Trip</a>
                 {{/if}}
             </div>
             <div id="nav-right">
                 {{#if isLoggedIn}}
-                <img src="/images/like.png" alt="heart" id="logo-heart"><a class="nav-item" href="#">My
+                <img src="/images/like.png" alt="heart" id="logo-heart"><a class="nav-item" href="/all-favourites">My
                     Favourite Trips</a>
                 {{/if}}
                 {{#unless isLoggedIn}}

@@ -5,7 +5,7 @@ const tripModel = require("./../models/Trip");
 router.get(["/", "/home"], (req, res, next) => {
     tripModel.find()
         .then(dbRes => {
-            res.render("index", { css: ["home", "layout"], trip: dbRes });
+            res.render("index", { css: ["home", "layout", "inspire-me"], trip: dbRes });
         })
         .catch(err => console.log(err))
 });

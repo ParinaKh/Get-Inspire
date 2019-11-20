@@ -47,9 +47,10 @@ h3 {
  display: flex;
  flex-direction: column;
  justify-content: space-between;
- margin-left: 10px;
+ margin-left: 40px;
  margin-right: 10px;
  width: 20%;
+ height: 1200px;
 }
 
 .container-one-tag {
@@ -79,12 +80,14 @@ h3 {
   display: flex;
   /* display: grid; */
   /* grid-template-columns: repeat(3,1fr); */
-  height: 900px;
+  height: 1300px;
   flex-direction: row; 
-  justify-content: space-between; 
+  justify-content: flex-start; 
   flex-wrap: wrap;
   width: 100%;
   margin-left: 50px;
+  position: relative;
+  top: 2px;
 }
 
 .user-picture {
@@ -93,7 +96,7 @@ h3 {
   height: 15%;
   position: absolute;
   top: 200px;
-  left: 220px;
+  left: 230px;
 }
 
 .trip-cards {
@@ -103,7 +106,15 @@ h3 {
  height: 300px;
  position: relative;
  top: 45px;
+ margin-right: 30px;
 }
+
+.trip-cards:hover {
+  -webkit-box-shadow: -1px 21px 28px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: -1px 21px 28px 0px rgba(0,0,0,0.35);
+  box-shadow: -1px 21px 28px 0px rgba(0,0,0,0.35);
+}
+
 
 #picture-card {
   height: 180px;
@@ -128,6 +139,8 @@ h3 {
  border-style: solid;
 }
 
+
+
 #container-text-card > h2 {
   font-size: 2rem;;
   font-weight: 600;
@@ -144,12 +157,23 @@ h3 {
 }
 
 
-.far.fa-heart {
-  color: grey;
+.fas.fa-heart {
+  color: white;
   position: absolute;
-  top: 0;
-  left:0;
+  left: 260px;
+  top: 15px;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 8px rgb(31, 29, 29);
 }
+
+.fas.fa-heart.clicked-heart {
+  color: #D75A4A;
+  position: absolute;
+  left: 260px;
+  top: 15px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
 
 .description-card {
     color: #6c717a;
@@ -167,6 +191,7 @@ h3 {
   border-top-width: 0.2px;
   border-top-style: solid;
 }
+
 
 .travel-infos-card > span {
   padding-right: 15px;
@@ -186,6 +211,23 @@ h3 {
   height: 39px;
 }
 
+.call-chevron {
+  padding-top: 5px;
+}
+
+ #cta { 
+  content: "» ";
+  color: #D75A4A;
+  font-size: 0.9rem;
+  padding-top: 10px;
+  font-weight: 700;
+}
+
+.fas.fa-chevron-right {
+  font-size: 0.8rem;
+  display: inline-block;
+  color: #D75A4A;
+}
 
 em {
   background: #7BB4BF;
