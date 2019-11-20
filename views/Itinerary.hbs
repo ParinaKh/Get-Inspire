@@ -1,9 +1,19 @@
-{{#each trip}}
-{{this.otherStep}}
-{{/each}}
+<div id="trip-map">
+    <div>
+        <h3 id="title">My Itinerary</h3>
+        <!--The div element for the map -->
+        <div id="map"></div>
+    </div>
+    <div id="itinerary-line">
+        {{#each trip.otherStep}}
+        <div class="container">
+            <i class="far fa-map-marker-alt"></i>
+            <li class="step">
+                {{this}}
+            </li>
+            <div class="line"></div>
+        </div>
+        {{/each}}
+    </div>
 
-
-
-<h3>My Google Maps Demo</h3>
-<!--The div element for the map -->
-<div id="map"></div>
+</div>
