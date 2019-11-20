@@ -4,9 +4,8 @@
 }
 
 .line {
-    height: 55px;
-    border-left: rgb(36, 34, 34) solid;
-
+    height: 50px;
+    border-left: rgb(123, 180, 191) solid;
 }
 
 .fas.fa-map-marker-alt {
@@ -15,12 +14,14 @@
 }
 
 .container {
-    padding-left: 40px
+    padding-left: 41px;
+    display: flex;
+    margin: 12px 0;
 }
 
 #trip-map {
     display: flex;
-    flex-direction: row
+    flex-direction: row;
 }
 
 #itinerary-line {
@@ -31,5 +32,13 @@
 }
 
 #title {
-    text-align: center
+    text-align: center;
+}
+
+.step {
+    margin-left: 20px;
+}
+
+.margin-line {
+    margin-left: 45px;
 }

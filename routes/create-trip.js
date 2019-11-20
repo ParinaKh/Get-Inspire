@@ -9,7 +9,7 @@ router.get("/create-trip", (req, res) => {
   // ! don't forget to add manage/create before create-trip
   res.render("forms/create-trip", {
     css: ["layout", "create-trip"],
-    script: ["create-trip", "autocomplete"]
+    script: ["create-trip", "autocomplete", "maps"]
   });
 });
 
