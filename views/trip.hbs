@@ -13,6 +13,7 @@
         </div>
         <div class="trip-details">
             <h2 class="trip-destination">{{trip.destination}}</h2>
+            <p class="description">{{trip.description}}</p>
             <p class="trip-thematics">
                 {{#each this.thematics}}
                 <span>{{this}}, </span>
@@ -21,6 +22,16 @@
             <p class="trip-duration">Duration: {{trip.duration}}</p>
             <p class="trip-period">Period: {{trip.period}}</p>
             <p class="trip-budget">Budget: {{trip.budget}}</p>
+        </div>
+        <div class="like-or-not">
+            <div class="i-liked">
+                <h4>I liked:</h4>
+                <p>{{trip.iLiked}}</p>
+            </div>
+            <div class="i-didnt-liked">
+                <h4>I didn't liked:</h4>
+                <p>{{trip.iDidntLiked}}</p>
+            </div>
         </div>
     </div>
     <!-- my itynerary: à remplacer quand parina aura fini-->
