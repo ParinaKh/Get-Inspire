@@ -16,7 +16,7 @@ const tripSchema = new Schema({
     iLiked: {
         type: String,
     },
-    iDidntLiked: {
+    iDidntLike: {
         type: String,
     },
     destination: {
