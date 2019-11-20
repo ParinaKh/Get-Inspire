@@ -8,7 +8,7 @@ router.get("/inspire-me", (req, res) => {
             path: "user",
         })
         .then(dbRes => {
-            res.render("inspire-me", { css: ["inspire-me", "layout"], trip: dbRes });
+            res.render("inspire-me", { css: ["inspire-me", "layout"], js: ["inspire-me"], trip: dbRes });
         })
         .catch(dbErr => console.error(dbErr))
 });

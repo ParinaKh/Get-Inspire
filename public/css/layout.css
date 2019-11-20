@@ -225,7 +225,7 @@ h4 {
 /* FOOTER */
 .footer {
     display: flex;
-    margin: 20px 25px;
+    margin: 200px 25px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
