@@ -2,3 +2,34 @@
     width: 400px;
     height: 400px;
 }
+
+.line {
+    height: 55px;
+    border-left: rgb(36, 34, 34) solid;
+
+}
+
+.fas.fa-map-marker-alt {
+    width: 5px;
+    height: 5px;
+}
+
+.container {
+    padding-left: 40px
+}
+
+#trip-map {
+    display: flex;
+    flex-direction: row
+}
+
+#itinerary-line {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title {
+    text-align: center
+}
