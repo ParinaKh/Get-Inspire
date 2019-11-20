@@ -13,6 +13,9 @@ const tripSchema = new Schema({
     //     ref: "User"
     // },
     description: String, // max length on attribute (>30 letters)
+    mustSeeToAvoid: {
+        type: String,
+    },
     destination: {
         type: String,
         enum: ["Mexico", "Morocco", "Laos", "Norway", "Denmark", "England", "France", "Italy", "Canada", "SouthAfrica", "Peru", "United states", "Japan", "Tunisia", "Senegal", "Sri Lanka", "Thailand", "Russia"],
