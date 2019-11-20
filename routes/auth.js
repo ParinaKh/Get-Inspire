@@ -6,7 +6,10 @@ const bcryptSalt = 10;
 const uploader = require("./../config/cloudinary");
 
 router.get("/signup", (req, res) => {
-  res.render("auth/signup", { css: ["signup-signin", "layout"] });
+  res.render("auth/signup", {
+    css: ["signup-signin", "layout"],
+    script: ["autocomplete"]
+  });
 });
 
 router.post("/signup", uploader.single("userpicture"), (req, res, next) => {
