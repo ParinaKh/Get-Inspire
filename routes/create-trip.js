@@ -19,12 +19,13 @@ router.post(
   (req, res, next) => {
     const newTrip = req.body;
     const userLoggedIn = req.session.currentUser;
-    console.log(req.session.currentUser); // when logged in : have access to the currentUser session
+    // console.log(req.session.currentUser); // when logged in : have access to the currentUser session
     if (req.file) newTrip.pictureTrip = req.file.secure_url; // for cloudinary upload
     if (userLoggedIn) newTrip.user = userLoggedIn._id; // need a error if not loggedIn ? or no need because will be a protected route...
     console.log(
       `userLoggedIn._id : ${userLoggedIn._id} or userLoggedIn.id : ${userLoggedIn.id}`
     );
+    // console.log(`userLoggedIn._id : ${userLoggedIn._id} or userLoggedIn.id : ${userLoggedIn.id}`);
     tripModel
       .create(newTrip)
       .then(tripRes => {
@@ -39,6 +40,6 @@ router.post(
   }
 );
 
-console.log("entered in create-trip.js routes file !");
+// console.log("entered in create-trip.js routes file !");
 
 module.exports = router;

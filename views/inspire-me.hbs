@@ -168,6 +168,7 @@
         {{#each trip}}
         <div class="trip-cards">
             <div id="picture-card">
+                <i class="far fa-heart"></i>
                 <img src="{{this.pictureTrip}}" />
             </div>
             <div id="container-text-card">
@@ -176,7 +177,7 @@
                 <h2>{{this.destination}}</h2>
                 <h3>Get Inspired by {{this.user.name}}</h3>
                 <div id="tags-card-trip">
-                    <i>Trip mood:</i>
+                    <em>Trip mood:</em>
                     {{#each this.thematics}}
                     <span>{{this}},</span>
                     {{/each}}

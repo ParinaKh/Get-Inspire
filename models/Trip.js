@@ -11,7 +11,10 @@ const tripSchema = new Schema({
   //     ref: "User"
   // },
   description: String, // max length on attribute (>30 letters)
-  mustSeeToAvoid: {
+  iLiked: {
+    type: String
+  },
+  iDidntLiked: {
     type: String
   },
   destination: {
@@ -68,10 +71,6 @@ const tripSchema = new Schema({
   },
   otherStep: {
     type: [String]
-  },
-  location: {
-    lat: geometry.location.lat(),
-    lng: geometry.location.lng()
   },
   user: {
     type: Schema.Types.ObjectId,

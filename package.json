@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ParinaKh/Get-Inspire#readme",
   "description": "",
   "dependencies": {
+    "axios": "^0.19.0",
     "bcrypt": "^3.0.7",
     "cloudinary": "^1.17.0",
     "connect-flash": "^0.1.1",

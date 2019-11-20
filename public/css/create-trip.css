@@ -19,6 +19,12 @@
 .form-item {
     padding: 10px 20px;
 }
+
+.form-item.textarea{
+    display: flex;
+    align-items: center;
+}
+
 .form-item.thematics {
     display: flex;
     align-items: center;
