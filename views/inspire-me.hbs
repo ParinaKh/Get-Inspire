@@ -172,8 +172,9 @@
             </div>
             <div id="container-text-card">
                 <!-- Favorite button HTML copied from generated WP Plugin HTML -->
+                <img class="user-picture" src="{{this.user.userpicture}}">
                 <h2>{{this.destination}}</h2>
-                <h3>Get Inspired by{{this.user.name}}</h3>
+                <h3>Get Inspired by {{this.user.name}}</h3>
                 <div id="tags-card-trip">
                     <i>Trip mood:</i>
                     {{#each this.thematics}}

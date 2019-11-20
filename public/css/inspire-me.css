@@ -77,12 +77,23 @@ h3 {
 
 .container-all-trip-cards {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  /* display: grid; */
+  /* grid-template-columns: repeat(3,1fr); */
+  height: 900px;
+  flex-direction: row; 
+  justify-content: space-between; 
   flex-wrap: wrap;
-  align-items: baseline;
   width: 100%;
-  margin-left: 30px;
+  margin-left: 50px;
+}
+
+.user-picture {
+  border-radius: 50%;
+  border: #243639;
+  height: 15%;
+  position: absolute;
+  top: 200px;
+  left: 220px;
 }
 
 .trip-cards {
@@ -102,6 +113,7 @@ h3 {
   display: block;
   max-width: 100%;
 }
+
 
 #container-text-card {
   padding: 20px;
@@ -162,6 +174,11 @@ h3 {
   padding: 10px 3px 10px 0px;
   font-size: 0.9rem;
 }
+
+#tags-card-trip {
+  height: 39px;
+}
+
 
 i {
   background: #7BB4BF;
