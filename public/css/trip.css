@@ -2,3 +2,43 @@
     width: 400px;
     height: 400px;
 }
+
+.line {
+    height: 50px;
+    border-left: rgb(123, 180, 191) solid;
+}
+
+.fas.fa-map-marker-alt {
+    width: 5px;
+    height: 5px;
+}
+
+.container {
+    padding-left: 41px;
+    display: flex;
+    margin: 12px 0;
+}
+
+#trip-map {
+    display: flex;
+    flex-direction: row;
+}
+
+#itinerary-line {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title {
+    text-align: center;
+}
+
+.step {
+    margin-left: 20px;
+}
+
+.margin-line {
+    margin-left: 45px;
+}

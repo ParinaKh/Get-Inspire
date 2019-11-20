@@ -2,10 +2,8 @@ const mongoose = require("mongoose"); // import mongoose dependencie
 
 const Schema = mongoose.Schema;
 
-
 // Tags : [bagpacker, luxe, nature, all-in, foodlover, sportif, culture]enum
 // Itinéraire (demander aux TA comment le créer)
-
 
 const tripSchema = new Schema({
     // id_user: { // à lier avec table user
@@ -13,7 +11,10 @@ const tripSchema = new Schema({
     //     ref: "User"
     // },
     description: String, // max length on attribute (>30 letters)
-    mustSeeToAvoid: {
+    iLiked: {
+        type: String,
+    },
+    iDidntLike: {
         type: String,
     },
     destination: {

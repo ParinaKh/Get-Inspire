@@ -2,15 +2,20 @@
     <form action="/manage/create-trip" method="post" class="add-trip" enctype="multipart/form-data">
         <h3 class="form-title">Add a new trip</h3>
 
-        <div class="form-item">
+        <div class="form-item textarea">
             <label for="description" class="">Short description</label>
-            <input id="description" type="text" class="" name="description" placeholder="< 30 caracters"
-                value="Safari family" required>
+            <textarea id="description" type="text" row="3" maxlength="30" name="description"
+                placeholder="< 30 caracters">Safari family</textarea>
         </div>
-        <div class="form-item">
-            <label for="mustSeeToAvoid">MustSee / To avoid : </label>
-            <input id="mustSeeToAvoid" type="text" class="" name="mustSeeToAvoid" placeholder="< 30 caracters"
-                value="Was greeaaaat">
+        <div class="form-item textarea">
+            <label for="iLiked">I liked : </label>
+            <textarea id="iLiked" type="text" row="3" name="iLiked"
+                placeholder="< 30 caracters">I loved this restaurant ! so yummy"</textarea>
+        </div>
+        <div class="form-item textarea">
+            <label for="iDidntLike">I didn't like : </label>
+            <textarea id="iDidntLike" type="text" row="3" name="iDidntLike"
+                placeholder="< 30 caracters">Don't drink tape water..I was sick </textarea>
         </div>
         <div class="form-item">
             <label for="destination" class="">Destination</label>
@@ -82,6 +87,6 @@
     {{!-- {{#if msg}}
     <p class="message {{msg.status}}">{{msg.text}}</p>
     {{/if}} --}}
-
-
+    <script type="text/javascript"
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl3zOkF6Rn0GpvxEY0gN7Y1E9hlmAdJ1I&libraries=places&callback=activatePlacesSearch"></script>
 </div>
