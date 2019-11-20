@@ -20,7 +20,7 @@ body {
 }
 
 main {
-  margin: 10px 50px 30px;
+  margin: 10px 100px 30px;
   color: white;
   display: flex;
   flex-direction: row;
