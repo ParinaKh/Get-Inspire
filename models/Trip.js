@@ -13,7 +13,10 @@ const tripSchema = new Schema({
     //     ref: "User"
     // },
     description: String, // max length on attribute (>30 letters)
-    mustSeeToAvoid: {
+    iLiked: {
+        type: String,
+    },
+    iDidntLiked: {
         type: String,
     },
     destination: {
