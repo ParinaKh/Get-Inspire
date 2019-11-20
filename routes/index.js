@@ -1,15 +1,22 @@
 const express = require("express");
 const router = new express.Router();
-router.get(["/", "/home"], (req, res, next) => {
+const tripModel = require("./../models/Trip");
 
-    res.render("index", { css: ["home", "layout"] });
+router.get(["/", "/home"], (req, res, next) => {
+    tripModel.find()
+        .then(dbRes => {
+            res.render("index", { css: ["home", "layout"], trip: dbRes });
+        })
+        .catch(err => console.log(err))
 });
 
 
 router.get("/about", (req, res, next) => {
-    console.log('in index.js');
+
     res.render("about", { css: ["about", "layout"] });
-});
+})
+
+
 
 
 module.exports = router;

@@ -3,9 +3,15 @@ const router = new express.Router();
 const tripModel = require("./../models/Trip");
 
 router.get("/inspire-me", (req, res) => {
-    res.render("inspire-me", { css: ["inspire-me", "layout"] });
+    tripModel.find()
+        .populate({
+            path: "user",
+        })
+        .then(dbRes => {
+            res.render("inspire-me", { css: ["inspire-me", "layout"], trip: dbRes });
+        })
+        .catch(dbErr => console.error(dbErr))
 });
-
 
 
 module.exports = router;

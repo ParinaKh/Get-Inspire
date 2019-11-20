@@ -1,3 +1,8 @@
+body {
+  margin:auto;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* Tags */
 
@@ -14,6 +19,13 @@
   text-shadow: 1px 1px 1px rgb(66, 63, 63);
 }
 
+main {
+  margin: 10px 50px 30px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
 h1 {
   color: white;
   font-size: 4rem;
@@ -22,7 +34,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1rem !important;
+  font-size: 1rem;
   color: black;
 }
 
@@ -31,17 +43,13 @@ h3 {
   margin: 8px 0;
 }
 
-main {
-  margin: 10px;
-  color: white;
-}
-
 .container-tags {
  display: flex;
  flex-direction: column;
  justify-content: space-between;
  margin-left: 10px;
- width: 15%;
+ margin-right: 10px;
+ width: 20%;
 }
 
 .container-one-tag {
@@ -67,52 +75,102 @@ main {
 
 /* Trip Card */
 
-.container {
+.container-all-trip-cards {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
+  align-items: baseline;
+  width: 100%;
+  margin-left: 30px;
 }
 
 .trip-cards {
  display: flex;
  flex-direction: column;
- width: 350px;
- height: 198px;
-}
-.trip-cards > div > img {
- width: 100%
+ width: 300px;
+ height: 300px;
+ position: relative;
+ top: 45px;
 }
 
-.picture-card {
-width: 100%;
-height: 40%;
+#picture-card {
+  height: 180px;
+}
+
+#picture-card > img {
+  display: block;
+  max-width: 100%;
 }
 
 #container-text-card {
-  padding: 5px;
+  padding: 20px;
+  background: #fff;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  color: #6c717a;
+  border-color: #dfe6ee;
+ border-width: 0 1px 1px;
+ border-style: solid;
 }
 
-#container-text-card :hover {
-    -webkit-box-shadow: 0px 9px 14px 0px rgba(161,152,161,1);
-    -moz-box-shadow: 0px 9px 14px 0px rgba(161,152,161,1);
-    box-shadow: 0px 9px 14px 0px rgba(161,152,161,1);
-  }
-
-h2 {
-    font-size: 1.5rem;  
+#container-text-card > h2 {
+  font-size: 2rem;;
+  font-weight: 600;
+  margin: 0px 0px 2px;
+  color:#243639;
 }
+
+
+#container-text-card h3 {
+  font-size:  1.5rem;
+  color: #7BB4BF;
+  font-weight: 800;
+  font-family: 'Caveat', cursive;
+}
+
 
 .description-card {
     color: #6c717a;
     font-size: 1rem;
 }
 
-.travel-infos-card {
+.travel-infos-card { 
   display: flex;
-  flex-direction: row;
-  padding: 5px;  
+  flex-direction:row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 8px; 
+  border-top-color: #7BB4BF;
+  border-top-width: 0.2px;
+  border-top-style: solid;
+}
+
+.travel-infos-card > span {
+  padding-right: 15px;
+  padding-top: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6c717a;
+  text-transform: uppercase; 
+}
+
+#tags-card-trip > span, i {
+  padding: 10px 3px 10px 0px;
+  font-size: 0.9rem;
+}
+
+i {
+  background: #7BB4BF;
+  padding: 2px;
+  margin-right: 5px;
+  color: white;
+}
+
+#favourite {
+  background: green;
+  height: 100px;
 }
