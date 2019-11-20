@@ -24,7 +24,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-
 // SESSION SETUP
 app.use(
   session({
@@ -47,7 +46,6 @@ app.use(function exposeFlashMessage(req, res, next) {
   next();
 });
 
-
 app.locals.site_url = process.env.SITE_URL;
 // used in front end to perform ajax request (var instead of hardcoded)
 
@@ -66,7 +64,7 @@ function checkloginStatus(req, res, next) {
 
 function eraseSessionMessage() {
   var count = 0; // initialize counter in parent scope and use it in inner function
-  return function (req, res, next) {
+  return function(req, res, next) {
     if (req.session.msg) {
       // only increment if session contains msg
       if (count) {
@@ -105,6 +103,8 @@ app.use("/trip", tripRouter);
 
 const wishlistRouter = require("./routes/wishlist");
 app.use("/wishlist", wishlistRouter);
+const itinerary = require("./routes/Itinerary-temporary");
+app.use(itinerary);
 
 // const listener = app.listen(process.env.PORT, () => {
 //   console.log(

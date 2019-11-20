@@ -39,3 +39,13 @@
     </form>
     <p class="form-sub-infos">Already have an account ? <a href="/auth/signin" class="button-link-form">Sign In</a></p>
 </section>
+
+<script>
+    function activatePlacesSearch() {
+        var input = document.getElementById("name");
+        var autoComplete = new google.maps.places.Autocomplete(input)
+    }
+</script>
+    
+<script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl3zOkF6Rn0GpvxEY0gN7Y1E9hlmAdJ1I&libraries=places&callback=activatePlacesSearch"></script>

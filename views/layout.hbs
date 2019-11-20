@@ -14,7 +14,11 @@
     <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     {{/each}}
-    {{#each js}}
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP7b0Pe1N-vq7l8mBXlwztfGMIKirlvJU&libraries=places"></script>
+    {{#each script}}
     <script type="module" src="/js/{{this}}.js"></script>
     {{/each}}
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
