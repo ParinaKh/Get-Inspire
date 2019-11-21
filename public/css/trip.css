@@ -103,6 +103,9 @@
     font-style: italic;
 }
 
+.description {
+    font-style: italic;
+}
 
 .trip-details {
     flex: 3;
@@ -185,4 +188,9 @@
 
 .like-title {
     color: #7BB4BF;
+}
+
+#title {
+    color :#7BB4BF;
+    font-weight: bold;
 }
