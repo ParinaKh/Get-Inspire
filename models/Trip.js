@@ -41,11 +41,11 @@ const tripSchema = new Schema({
     type: [String],
     enum: [
       "bagpacker",
-      "luxe",
+      "luxury",
       "nature",
       "all-inclusive",
       "foodlover",
-      "sportif",
+      "sportive",
       "culture"
     ] // on pourra en selectionner plusieurs dans le form
   },
