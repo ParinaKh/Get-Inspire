@@ -19,7 +19,7 @@ const tripSchema = new Schema({
     },
     destination: {
         type: String,
-        enum: ["Mexico", "Morocco", "Laos", "Norway", "Denmark", "England", "France", "Italy", "Canada", "SouthAfrica", "Peru", "United states", "Japan", "Tunisia", "Senegal", "Sri Lanka", "Thailand", "Russia"],
+        enum: ["Canada", "Denmark", "England", "France", "Italy", "Japan", "Laos", "Mexico", "Morocco", "Norway", "Peru", "Russia", "Senegal", "South Africa", "Sri Lanka", "Thailand", "Tunisia", "United states"],
     },
     budget: {
         type: String,
@@ -27,11 +27,11 @@ const tripSchema = new Schema({
     },
     duration: {
         type: String,
-        enum: ["week-end", "1week", "2weeks", ">2weeks"],
+        enum: ["week-end", "1 week", "2 weeks", ">2 weeks"],
     },
     period: {
         type: String,
-        enum: ["jan-mar", "apr-jun", "jul-sep", "oct-dec"],
+        enum: ["Jan-Mar", "Apr-Jun", "Jul-Sep", "Oct-Dec"],
     },
     pictureTrip: {
         type: String,
