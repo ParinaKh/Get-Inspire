@@ -22,19 +22,25 @@
                     {{/each}}
                 </p>
                 <div class="duration-period-budget">
-                    <p class="trip-duration">Duration: {{trip.duration}}</p>
-                    <p class="trip-period">Period: {{trip.period}}</p>
-                    <p class="trip-budget">Budget: {{trip.budget}}</p>
+                    <p class="trip-duration">
+                        <i class="fas fa-hourglass-half"></i>
+                        Duration: {{trip.duration}}</p>
+                    <p class="trip-period">
+                        <i class="far fa-calendar-alt"></i>
+                        Period: {{trip.period}}</p>
+                    <p class="trip-budget">
+                        <i class="fas fa-euro-sign"></i>
+                        Budget: {{trip.budget}}</p>
                 </div>
                 <hr class="separate">
             </div>
             <div class="like-or-not">
                 <div class="i-liked">
-                    <h4 class="like-title">I liked:</h4>
+                    <h4 class="like-title"><i class="far fa-thumbs-up"></i></h4>
                     <p class="like-item">{{trip.iLiked}}</p>
                 </div>
                 <div class="i-didnt-like">
-                    <h4 class="like-title">I didn't like:</h4>
+                    <h4 class="like-title"><i class="far fa-thumbs-down"></i></h4>
                     <p class="like-item">{{trip.iDidntLike}}</p>
                 </div>
             </div>
