@@ -67,10 +67,8 @@ router.post("/signin", (req, res) => {
   const thePassword = req.body.password;
 
   if (theEmail === "" || thePassword === "") {
-    res.render("signin", {
-      msg: "Please enter both, email and password to sign in."
-    });
-    return;
+    req.flash("error", "Wrong credentials");
+    return res.redirect("/auth/signin");
   }
 
   userModel
