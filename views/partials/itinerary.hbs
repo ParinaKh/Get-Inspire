@@ -1,0 +1,21 @@
+<div id="trip-map">
+    <div id="itinerary-line">
+        {{#each trip.otherStep}}
+        <div class="container">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="step">
+                {{this}}
+            </div>
+        </div>
+        <div class="margin-line">
+            <div class="line"></div>
+        </div>
+        {{/each}}
+    </div>
+
+    <div>
+        <h3 id="title">My Itinerary</h3>
+        <!--The div element for the map -->
+        <div id="map"></div>
+    </div>
+</div>

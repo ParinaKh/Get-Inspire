@@ -3,7 +3,7 @@ var bounds = new google.maps.LatLngBounds();
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: -34.397, lng: 150.644 },
-    zoom: 10
+    zoom: 8
   });
 }
 
@@ -21,7 +21,6 @@ oneStep.forEach(element => {
       fields: ["name", "geometry"]
     },
     function(results, status) {
-      console.log("premier");
       // console.log("ici", results[0].geometry.location.lng());
       const lat = results[0].geometry.location.lat();
       const lng = results[0].geometry.location.lng();
