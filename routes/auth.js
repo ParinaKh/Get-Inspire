@@ -47,7 +47,7 @@ router.post("/signup", uploader.single("userpicture"), (req, res, next) => {
         .create(newUser)
         .then(userRes => {
           req.session.currentUser = userRes;
-          res.redirect("/home");
+          res.redirect("/inspire-me");
         })
         .catch(error => {
           console.log(error);
@@ -66,27 +66,25 @@ router.post("/signin", (req, res) => {
   const theEmail = req.body.email;
   const thePassword = req.body.password;
 
-  if (theEmail === "" || thePassword === "") {
-    req.flash("error", "Wrong credentials");
-    return res.redirect("/auth/signin");
-  }
+  // if (theEmail === "" || thePassword === "") {
+  //   return res.redirect("/auth/signin");
+  // }
 
   userModel
     .findOne({ email: theEmail })
     .then(user => {
       if (!user) {
-        res.render("signin", {
-          msg: "The email doesn't exist."
-        });
+        req.flash("error", "Wrong credentials");
+        res.redirect("/auth/signin")
         return;
       }
       if (bcrypt.compareSync(thePassword, user.password)) {
         // Save the login in the session!
         req.session.currentUser = user;
-        res.redirect("/home");
+        res.redirect("/inspire-me");
       } else {
-        res.redirect("/home", {
-          msg: "Incorrect password"
+        res.redirect("/signin", {
+          // msg: "Incorrect password"
         });
       }
     })
