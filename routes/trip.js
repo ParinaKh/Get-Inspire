@@ -12,7 +12,7 @@ router.get("/:id", (req, res) => { // no need to get "/trip/:id" because /trip i
         .findOne({ _id: { $eq: req.params.id } })
         .populate("user")
         .then(dbRes => {
-            console.log(req.params.id)
+            console.log(dbRes)
             res.render("trip", {
                 trip: dbRes, // will be use in our trip.hbs view
                 css: ["layout", "trip"]
