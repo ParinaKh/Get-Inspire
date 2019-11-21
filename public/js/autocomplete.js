@@ -1,5 +1,5 @@
 function activatePlacesSearch() {
-  var input = document.getElementById("onestep");
+  var input = document.querySelectorAll("#onestep, #destination");
   console.log(input);
   var autoComplete = new google.maps.places.Autocomplete(input);
   //   console.log(autoComplete.getPlace());
@@ -11,6 +11,7 @@ function activatePlacesSearch() {
     let lng = autoComplete.getPlace().geometry.location.lng();
   });
 }
+
 // activatePlacesSearch();
 
 // console.log(new google.maps.places.search("Paris"));
