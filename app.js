@@ -102,8 +102,8 @@ app.use("/", inspireRouter);
 const tripRouter = require("./routes/trip");
 app.use("/trip", tripRouter);
 
-const wishlistRouter = require("./routes/wishlist");
-app.use("/", wishlistRouter);
+const favouritesRouter = require("./routes/favourites");
+app.use("/", favouritesRouter);
 
 const itinerary = require("./routes/Itinerary-temporary");
 app.use(itinerary);

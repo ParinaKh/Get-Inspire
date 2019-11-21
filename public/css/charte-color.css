@@ -1,0 +1,13 @@
+/* les fontes : */
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+/* les couleurs */
+
+charte {
+    color: white;
+    /* color: #243639; vert foncé
+    /* color: #6c717a; gris clair (texte) */
+    /* color: #7BB4BF; vert claire */
+    /* color: #D75A4A; pour CTA et/ou mise en exergue */
+}
+

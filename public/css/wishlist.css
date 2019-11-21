@@ -3,3 +3,174 @@ body {
     padding: 0;
     box-sizing: border-box;
   }
+
+  h1 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .container-all-trip-cards {
+    display: flex;
+    /* display: grid; */
+    /* grid-template-columns: repeat(3,1fr); */
+    height: 1300px;
+    flex-direction: row; 
+    justify-content: flex-start; 
+    flex-wrap: wrap;
+    width: 100%;
+    margin-left: 50px;
+    position: relative;
+    top: 2px;
+  }
+  
+  .user-picture {
+    border-radius: 50%;
+    border: 3px solid white;
+    height: 20%;
+    width: 20%;
+    position: absolute;
+    top: 150px;
+    left: 225px;
+  }
+  
+  .trip-cards {
+   display: flex;
+   flex-direction: column;
+   width: 300px;
+   height: 300px;
+   position: relative;
+   top: 45px;
+   margin-right: 30px;
+  }
+  
+  .trip-cards:hover {
+    -webkit-box-shadow: -1px 21px 28px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: -1px 21px 28px 0px rgba(0,0,0,0.35);
+    box-shadow: -1px 21px 28px 0px rgba(0,0,0,0.35);
+  }
+  
+  
+  #picture-card {
+    height: 180px;
+  }
+  
+  #picture-card > img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  
+  #container-text-card {
+    padding: 20px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    color: #6c717a;
+    border-color: #dfe6ee;
+   border-width: 0 1px 1px;
+   border-style: solid;
+  }
+  
+  
+  
+  #container-text-card > h2 {
+    font-size: 2rem;;
+    font-weight: 600;
+    margin: 0px 0px 2px;
+    color:#243639;
+  }
+  
+  
+  #container-text-card h3 {
+    font-size:  1.5rem;
+    color: #7BB4BF;
+    font-weight: 800;
+    font-family: 'Caveat', cursive;
+  }
+  
+  
+  .fas.fa-heart {
+    color: white;
+    position: absolute;
+    left: 260px;
+    top: 15px;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 8px rgb(31, 29, 29);
+  }
+  
+  .fas.fa-heart.clicked-heart {
+    color: #D75A4A;
+    position: absolute;
+    left: 260px;
+    top: 15px;
+    text-shadow: 2px 2px 4px #000000;
+  }
+  
+  
+  .description-card {
+      color: #6c717a;
+      font-size: 1rem;
+  }
+  
+  .travel-infos-card { 
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 8px; 
+    border-top-color: #7BB4BF;
+    border-top-width: 0.2px;
+    border-top-style: solid;
+  }
+  
+  
+  .travel-infos-card > span {
+    padding-right: 15px;
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6c717a;
+    text-transform: uppercase; 
+  }
+  
+  #tags-card-trip > span, em {
+    padding: 10px 3px 10px 0px;
+    font-size: 0.9rem;
+  }
+  
+  #tags-card-trip {
+    height: 39px;
+  }
+  
+  .call-chevron {
+    padding-top: 5px;
+  }
+  
+   #cta { 
+    content: "» ";
+    color: #D75A4A;
+    font-size: 0.9rem;
+    padding-top: 10px;
+    font-weight: 700;
+  }
+  
+  .fas.fa-chevron-right {
+    font-size: 0.8rem;
+    display: inline-block;
+    color: #D75A4A;
+  }
+  
+  em {
+    background: #7BB4BF;
+    padding: 2px;
+    margin-right: 5px;
+    color: white;
+  }
+  
+  #favourite {
+    background: green;
+    height: 100px;
+  }

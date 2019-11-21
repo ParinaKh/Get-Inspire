@@ -237,7 +237,7 @@ h4 {
 
 hr {
     width: 80px;
-    background-color: yellow;
+    background-color: #243639;
     height: 3px;
     border: none;
     margin-bottom: 15px;
@@ -253,7 +253,7 @@ hr {
 #creators-picture {
     height: 20vh;
     border-radius: 50%;
-    border: 2px solid green;
+    border: 2px solid #7BB4BF ;
     margin-top: 10px;
 }
 
