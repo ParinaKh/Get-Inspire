@@ -62,7 +62,15 @@ h3 {
   font-size: 0.9rem;
   padding: 2px 0px;
   border: none;
+  border-radius: 4px;
+  height: 15px;
+  width: 15px;
+  background: #fff;
+  border: 1px solid #ccc;
+  position: relative;
+  top: 2px;
 }
+
 
 #destination-tag {
   background: #7BB4BF;
@@ -123,7 +131,7 @@ h3 {
 
 #picture-card > img {
   display: block;
-  max-width: 100%;
+  width: 100%;
 }
 
 

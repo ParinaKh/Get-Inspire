@@ -1,5 +1,9 @@
 <h1>Hey {{this.user.name}} this is a selection of all your favourite trips !</h1>
 
+{{#unless user.favourite}}
+<p class="no-inspiration">Not inspired yet...</p>
+{{/unless}}
+
 <div class="container-all-trip-cards">
     {{#each user.favourite}}
     <div class="trip-cards">

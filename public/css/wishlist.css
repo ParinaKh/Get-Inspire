@@ -1,5 +1,5 @@
 body {
-    margin:auto;
+    margin:0;
     padding: 0;
     box-sizing: border-box;
   }
@@ -7,13 +7,22 @@ body {
   h1 {
     text-align: center;
     font-size: 1.5rem;
+    position: relative;
+    top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .no-inspiration {
+    text-align: center;
+    position: relative;
+    top: 30px;
   }
 
   .container-all-trip-cards {
     display: flex;
     /* display: grid; */
     /* grid-template-columns: repeat(3,1fr); */
-    height: 1300px;
+    height: 900px;
     flex-direction: row; 
     justify-content: flex-start; 
     flex-wrap: wrap;
@@ -21,6 +30,7 @@ body {
     margin-left: 50px;
     position: relative;
     top: 2px;
+    margin-bottom: 100px;
   }
   
   .user-picture {
@@ -174,3 +184,5 @@ body {
     background: green;
     height: 100px;
   }
+
+  
