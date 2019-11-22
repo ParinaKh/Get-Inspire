@@ -2,7 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const tripModel = require("./../models/Trip");
 
-router.get("/inspire-me", (req, res) => {
+router.get(["/", "/inspire-me"], (req, res) => {
     tripModel.find()
         .populate({
             path: "user",
