@@ -1,7 +1,7 @@
 <div id="trip-map">
     <div id="itinerary-line">
         {{#each trip.otherStep}}
-        <div class="container">
+        {{#unless @last}}<div class="container">
             <i class="fas fa-map-marker-alt"></i>
             <div class="step">
                 {{this}}
@@ -9,8 +9,14 @@
         </div>
         <div class="margin-line">
             <div class="line"></div>
-        </div>
+        </div>{{/unless}}{{#if @last}}<div class="container">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="step">
+                {{this}}
+            </div>
+        </div>{{/if}}
         {{/each}}
+
     </div>
 
     <div>
