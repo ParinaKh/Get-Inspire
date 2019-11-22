@@ -3,9 +3,10 @@ const router = new express.Router();
 const tripModel = require("../models/Trip");
 const uploader = require("./../config/cloudinary");
 const userModel = require("../models/User");
+const protectUserRoute = require("../middleware/protectedRoute");
 
 // BACKEND ROUTES
-router.get("/create-trip", (req, res) => {
+router.get("/create-trip", protectUserRoute, (req, res) => {
   // ! don't forget to add manage/create before create-trip
   res.render("forms/create-trip", {
     css: ["layout", "create-trip"],
@@ -15,11 +16,12 @@ router.get("/create-trip", (req, res) => {
 
 router.post(
   "/create-trip",
+  protectUserRoute,
   uploader.single("pictureTrip"),
   (req, res, next) => {
     const newTrip = req.body;
     const userLoggedIn = req.session.currentUser;
-    // console.log(req.session.currentUser); // when logged in : have access to the currentUser session
+    console.log(req.session.currentUser); // when logged in : have access to the currentUser session
     if (req.file) newTrip.pictureTrip = req.file.secure_url; // for cloudinary upload
     if (userLoggedIn) newTrip.user = userLoggedIn._id; // need a error if not loggedIn ? or no need because will be a protected route...
     console.log(
