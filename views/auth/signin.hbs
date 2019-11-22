@@ -2,20 +2,23 @@
 <section class="sign form-container">
     <header class="form-header">
         <h1 class="form-title">Welcome Back !</h1>
-        <p class="form-subtitle">Find your intinerary</p>
+        <p class="form-subtitle">Find your itinerary</p>
     </header>
     {{#if error_msg}}
     <p class="msg error">{{error_msg}}</p>
     {{/if}}
     <form method="post" action="/auth/signin" id="form_user">
-        <div class="form-item-wrapper flexed-item">
-            <label for="email" class="label-ref">Email</label>
-            <input name="email" id="email" type="email" class="input-text input" placeholder="email" required value="">
-        </div>
-        <div class="form-item-wrapper flexed-item">
-            <label for="password" class="label-ref">Password</label>
-            <input name="password" id="password" type="password" class="input-text input" placeholder="••••••" required
-                value="password">
+        <div class="input-user-info">
+            <div class="form-item-wrapper flexed-item">
+                <label for="email" class="label-ref email-label">Email</label>
+                <input name="email" id="email" type="email" class="input-text input" placeholder="email" required
+                    value="">
+            </div>
+            <div class="form-item-wrapper flexed-item">
+                <label for="password" class="label-ref">Password</label>
+                <input name="password" id="password" type="password" class="input-text input" placeholder="••••••"
+                    required value="password">
+            </div>
         </div>
         <button class="button-primary">Log in !</button>
     </form>

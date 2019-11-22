@@ -23,7 +23,9 @@ router.get("/my-favourites", (req, res) => {
 
 
 router.get("/get-my-favourites", (req, res) => {
-    userModel.findById(req.session.currentUser._id).then(response => res.send(response.favourite)).catch(err => console.log(err))
+    userModel.findById(req.session.currentUser._id)
+        .then(response => res.send(response.favourite))
+        .catch(err => console.log(err))
 })
 
 

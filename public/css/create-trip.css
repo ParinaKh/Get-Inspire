@@ -2,18 +2,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 4%;
+    padding-top: 5px;
     padding-bottom: 4%;
-    color: #1474D0;
-    -webkit-box-shadow: 3px 6px 24px -4px rgba(200,204,202,1);
-    -moz-box-shadow: 3px 6px 24px -4px rgba(200,204,202,1);
-    box-shadow: 3px 6px 24px -4px rgba(200,204,202,1);
 }
 .add-trip {
-    padding: 20px auto;
-    border: 1px inset #1474D0;;
+    padding: 20px;
+    border: 1px inset #1474D0;
+    color: #243639;
     border-radius: 20px;
-    width: 400px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+textarea, input, select {
+    width: 50%;
+    height: 40%;
+    padding-bottom: 20px;
 }
 
 .form-item {
@@ -32,6 +39,7 @@
 
 .form-title {
     text-align: center;
+    font-size: 1.5rem;
 }
 
 .select {
@@ -42,11 +50,12 @@
     padding: 10px 20px;
     text-align: center;
     color: white;
-    background-color: #1474D0;
-    border-radius: 5px;
+    background: #D75A4A;
+    border-radius: 2px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     margin: 10px auto;
     display: block;
+    border: none;
 }
 
 .button-create-trip:hover {
@@ -54,9 +63,9 @@
 }
 
 .form-item label {
-    font-size: 14px;
+    font-size: 1.1rem;
     width: 150px;
     display: inline-block;
-    padding: 0px 10px;
+    font-weight: 900;
 }
 

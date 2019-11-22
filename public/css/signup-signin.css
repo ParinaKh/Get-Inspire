@@ -5,26 +5,42 @@
     flex-direction: column;
     align-items: center;
     padding-top: 7%;
-    padding-bottom: 7%;
-    height: calc(100vh - (84px));
-    background: url(/images/borabora.jpg);
+    height: 100vh;;
+    background: url(/images/sunset.jpg);
     background-size: cover;
-    color: white
+    color: white;
+}
+
+.input-user-info {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: baseline;
+    width: 70%;
+    padding: 10px;
 }
 
 .form-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2.2rem;
+    position: relative;
+    top: -25px;
 }
 
-.sign.form-container .form-title {
-    font-size: 4em;
+.form-title {
+        color: white;
+        font-size: 4rem;
+        font-weight: 800;
+        text-shadow: 1px 1px 1px rgb(66, 63, 63);
+        position: relative;
+        top: -50px;
+}
+
+.sign.form-container  {
+    font-size: 1rem;
     font-weight: 700;
     margin-bottom: .5rem;
-    text-align: center;
-    text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 #form_user .form-item-wrapper:last-child {
@@ -34,30 +50,33 @@
 
 #form_user {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 40%;
     background-color: rgba(255, 255, 255, 0.7);
     color: black;
-    padding: 40px;
-    border-radius: 20px;
+    padding: 20px;
+    border-radius: 10px;
     text-shadow: white 0.1em 0.1em 0.2em;
-    font-weight: bold
+    font-weight: bold;
+    position: relative;
+    top: -130px;
+    width: 40%;
 }
 
 #form_user .form-item-wrapper {
     width: 75%;
-    align-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
     margin: 15px;
     display: flex;
     HEIGHT: 30px;
 }
 
 .form-subtitle {
-    font-size: 1.5em;
-    text-shadow: black 0.1em 0.1em 0.2em;
+    font-size: 2rem;
+    text-shadow: 1px 1px 1px rgb(66, 63, 63);
+    position: relative;
+    top: -120px;
 }
 
 .form-sub-infos {
@@ -66,8 +85,10 @@
     width: 30%;
     background-color: rgba(255, 255, 255, 0.6);
     text-align: center;
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 20px;
+    position: relative;
+    top: -110px;
 }
 
 #form_user .button-primary {
@@ -88,20 +109,23 @@
 .input-text.input {
     border: none;
     color: gray;
-    padding: 4px;
+    padding: 10px;
     border-radius: 4px;
     text-align: center;
-    width: 80%;
     /* height: 15px; */
-    align-items: right;
     display: flex;
-    margin-left: 5px;
-    font-size: 1rem
+    font-size: 1rem;
+    width: 100%;
 }
 
 .label-ref {
-    width: 30%;
-    padding-right: 10px;
+    width: 40%;
+    padding-right: 20px;
+}
+
+.email-label {
+    display: flex;
+    justify-content: flex-start;
 }
 
 #user-picture {
@@ -109,11 +133,12 @@
 }
 
 .button-primary {
-    height: 25px;
-    background: #1475d0;
+    padding: 10px 20px;
+    background: #D75A4A;
     text-decoration: none;
     color: white;
-    border: none
+    border: none;
+    border-radius: 2px;
 }
 
 
