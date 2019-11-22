@@ -93,6 +93,7 @@ h3 {
   margin-left: 50px;
   position: relative;
   flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .user-picture {
