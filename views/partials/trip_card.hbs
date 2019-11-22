@@ -1,34 +1,31 @@
-<div class="container-all-trip-cards">
-    {{#each trip}}
-    <div class="trip-cards">
-        <div id="picture-card">
-            <i data-id="{{this._id}}" class="fas fa-heart"></i>
-            <img src="{{this.pictureTrip}}" />
+{{#each trip}}
+<div class="trip-cards">
+    <div id="picture-card">
+        <i data-id="{{this._id}}" class="fas fa-heart"></i>
+        <img src="{{this.pictureTrip}}" />
+    </div>
+    <div id="container-text-card">
+        <!-- Favorite button HTML copied from generated WP Plugin HTML -->
+        <div class="polaroids">
+            <img class="user-picture" src="{{this.user.userpicture}}">
         </div>
-        <div id="container-text-card">
-            <!-- Favorite button HTML copied from generated WP Plugin HTML -->
-            <div class="polaroids">
-                <span></span>
-                <img class="user-picture" src="{{this.user.userpicture}}">
-            </div>
-            <h2>{{this.destination}}</h2>
-            <h3>Get Inspired by {{this.user.name}}</h3>
-            <div id="tags-card-trip">
-                <em>Trip mood:</em>
-                {{#each this.thematics}}
-                <span>{{this}},</span>
-                {{/each}}
-            </div>
-            <div class="travel-infos-card">
-                <span>{{this.duration}}</span>
-                <span>{{this.budget}}</span>
-                <span>{{this.period}}</span>
-            </div>
-            <div class="call-chevron">
-                <i class="fas fa-chevron-right"></i>
-                <a id="cta" href="/trip/{{this._id}}">Discover now !</a>
-            </div>
+        <h2>{{this.destination}}</h2>
+        <h3>Get Inspired by {{this.user.name}}</h3>
+        <div id="tags-card-trip">
+            <em>Trip mood:</em>
+            {{#each this.thematics}}
+            <span>{{this}},</span>
+            {{/each}}
+        </div>
+        <div class="travel-infos-card">
+            <span>{{this.duration}}</span>
+            <span>{{this.budget}}</span>
+            <span>{{this.period}}</span>
+        </div>
+        <div class="call-chevron">
+            <i class="fas fa-chevron-right"></i>
+            <a id="cta" href="/trip/{{this._id}}">Discover now !</a>
         </div>
     </div>
-    {{/each}}
 </div>
+{{/each}}

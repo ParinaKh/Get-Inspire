@@ -63,6 +63,7 @@ router.post("/filter-trips", (req, res) => {
             })
             .catch(err => console.log(err))
     }
+    
 })
 
 
