@@ -36,19 +36,18 @@ function setCheckBoxListeners() {
 
     //Filtrer les tags
     // 1) je selectionne touuutes les checkboxes qui ont l'attribut name=...
-    //    et je les mets tous dans le tableau checkBoxes
+    //    = tableau checkBoxes
     const checkBoxes = document.querySelectorAll("[name='destination'],[name='period'],[name='budget'],[name='duration'],[name='thematics']");
-
     // 2) pour chaque checkbox du tableau, quand elle est clickée:
     // je crée un tableau vide par catégorie de filtre
     // je checke si elle est sélectionnée ET a l'attribut de la catégorie de filtre
     // j'ajoute la valeur de l'attribut dans le tableau de cette catégorie
     checkBoxes.forEach(checkbox => {
         checkbox.onclick = function (event) {
-            // écrire function pour code répété ci-dessous ce week-end
+            // écrire function pour code répété ci-dessous:
             const filteredDestinations = [];
             checkBoxes.forEach(input => {
-                if (input.checked === true && input.hasAttribute("data-destination")) {
+                if (input.checked === true && input.hasAttribute("data-destination")) { // besoin de hasAttribute sinon si la première case cochée dans checkBoxes
                     filteredDestinations.push(input.getAttribute("data-destination"));
                 }
             })
@@ -81,7 +80,7 @@ function setCheckBoxListeners() {
 
             // 3) AXIOS, requête AJAX puis envoie au serveur:
             // Envoie ces données au serveur sous la forme d'un object
-            // avec key axios nommée par moi et sa valeur est le tableau des checkbox cochées
+            // avec key et valeur = tableau à jour des checkbox cochées
             console.log(filteredThematics);
             axios.post("/filter-trips", {
                 destination: filteredDestinations,

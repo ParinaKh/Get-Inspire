@@ -64,8 +64,8 @@ router.post("/filter-trips", (req, res) => {
 
     //
     if (req.body !== {}) {
-        // si les data dans la réponse du serveur ne sont pas vides (donc qu'il y a qq de chocher)
-        // alors tu executes ma query
+        // si les data dans la réponse du serveur ne sont pas vides (donc qu'il y a qq de choché)
+        // alors tu executes ma query....
         tripModel
             .find(
                 query
@@ -75,20 +75,19 @@ router.post("/filter-trips", (req, res) => {
             .catch(err => console.log(err))
     }
     else {
+        // sinon si le req.body est vide tu affiches tout
         tripModel
             .find().populate("user")
             .then(dbRes => {
-                // console.log("tout", dbRes);
                 res.send(dbRes)
             })
             .catch(err => console.log(err))
     }
-    
+
 })
 
 
 
 module.exports = router;
 
-// filter that was working: { $or: [{ destination: { $in: req.body.destinations } }] }
 // {$and: [{ destination: { $in: ["France", "Canada"] } }, { budget: { $in: ["0-500€"] } },{ duration: { $in: ["week-end"] } },{ period: { $in: ["Jul-Sep"] } }, { thematics: { $in: ["luxury", "nature"] } } ]}
