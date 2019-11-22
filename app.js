@@ -29,7 +29,9 @@ app.use(cookieParser());
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
-    cookie: { maxAge: 600000 }, // in millisec
+    cookie: {
+      expires: new Date(Date.now() + (30 * 86400 * 1000))
+    }, // in millisec = 1h
     store: new MongoStore({
       mongooseConnection: mongoose.connection,
       ttl: 24 * 60 * 60 // 1 day
