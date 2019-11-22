@@ -16,7 +16,8 @@
 .container {
     padding-left: 25px;
     display: flex;
-    margin: 5px 0;
+    margin: 4px 0;
+    align-items: center;
 }
 
 #trip-map {
@@ -191,7 +192,7 @@
 }
 
 #title {
-    color :#7BB4BF;
+    color: #7BB4BF;
     font-weight: bold;
 }
 
