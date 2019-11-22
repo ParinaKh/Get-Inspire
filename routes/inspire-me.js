@@ -13,39 +13,59 @@ router.get("/inspire-me", (req, res) => {
         .catch(dbErr => console.error(dbErr))
 });
 
+// 4) reçois les infos de la requête AJAX :
 router.post("/filter-trips", (req, res) => {
+
+    // déclare des variables avec toutes les valeurs possibles dans le tableau des chexboxs cochées (filteredBudget par ex)
+    // permet de m'afficher TOUS mes voyages par défaut si c'est pas coché
     // console.log(req.body)
     let period = ["Jan-Mar", "Apr-Jun", "Jul-Sep", "Oct-Dec"];
     let budget = ["0-500€", "500-1000€", ">1000€"];
     let duration = ["week-end", "1 week", "2 weeks", ">2 weeks"];
+    let thematics = [
+        "bagpacker",
+        "luxury",
+        "nature",
+        "all-inclusive",
+        "foodlover",
+        "sportive",
+        "culture"
+    ];
+
+    //tu les stockes dans une variable qui deviendra une valeur dans ma requete
     if (req.body.period.length) period = req.body.period
     if (req.body.budget.length) budget = req.body.budget
-    console.log(req.body.budget);
-    console.log(req.body.duration);
     if (req.body.duration.length) duration = req.body.duration
+    if (req.body.thematics.length) thematics = req.body.thematics
+    console.log(req.body.thematics);
+
+    // déclare ma requête pour pouvoir l'utiliser après dans ma promesse
     let query = {
+        // ici dans la requete à la BDD on ne peut pas changer les keys car ce sont celles du TripModel
+        // par contre la value des keys = celle reçue du serveur ci-dessus
         $and: [
             { destination: { $in: req.body.destination } },
             { period: { $in: period } },
             { budget: { $in: budget } },
             { duration: { $in: duration } },
-            // ici si les cases Canada + Jan-Mar + 0-500€ cochées --> alors tripCard voyage Canada apparait avec toutes ces infos..
-            // MAIS il devrait apparaître aussi quand juste Canada + Jan-Mar  cochés....(marchent très bien indépendamment avec $or...)
+            { thematics: { $in: thematics } },
         ]
     }
-    // console.log(req.body.destination)
     if (!req.body.destination.length) {
         query = {
             $and: [
                 { period: { $in: period } },
                 { budget: { $in: budget } },
                 { duration: { $in: duration } },
-                // ici si les cases Canada + Jan-Mar + 0-500€ cochées --> alors tripCard voyage Canada apparait avec toutes ces infos..
-                // MAIS il devrait apparaître aussi quand juste Canada + Jan-Mar  cochés....(marchent très bien indépendamment avec $or...)
+                { thematics: { $in: thematics } }, // requete à modifier pour avoir plusieurs
             ]
         }
     }
+
+    //
     if (req.body !== {}) {
+        // si les data dans la réponse du serveur ne sont pas vides (donc qu'il y a qq de chocher)
+        // alors tu executes ma query
         tripModel
             .find(
                 query

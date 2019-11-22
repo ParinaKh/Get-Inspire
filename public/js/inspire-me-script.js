@@ -1,6 +1,4 @@
-
 var favourites = [];
-
 //afficher les voyages sauvegardés (coeur rouge)
 axios.get("/get-my-favourites").then(res => {
     const hearts = document.querySelectorAll(".fas.fa-heart");
@@ -10,10 +8,7 @@ axios.get("/get-my-favourites").then(res => {
         if (res.data.includes(id)) { heart.classList.toggle("clicked-heart"), favourites.push(id) }
     })
 }).catch(err => console.log(err))
-
-
 //ajouter ou supprimer des favoris
-
 function setHeartListener() {
     const hearts = document.querySelectorAll(".fas.fa-heart");
     hearts.forEach(heart => {
@@ -35,19 +30,22 @@ function setHeartListener() {
         }
     })
 }
-
 setHeartListener();
-//Filtrer les tags
-
 
 function setCheckBoxListeners() {
 
+    //Filtrer les tags
+    // 1) je selectionne touuutes les checkboxes qui ont l'attribut name=...
+    //    et je les mets tous dans le tableau checkBoxes
+    const checkBoxes = document.querySelectorAll("[name='destination'],[name='period'],[name='budget'],[name='duration'],[name='thematics']");
 
-    const checkBoxes = document.querySelectorAll("[name='destination'],[name='period'],[name='budget'],[name='duration']");
-
+    // 2) pour chaque checkbox du tableau, quand elle est clickée:
+    // je crée un tableau vide par catégorie de filtre
+    // je checke si elle est sélectionnée ET a l'attribut de la catégorie de filtre
+    // j'ajoute la valeur de l'attribut dans le tableau de cette catégorie
     checkBoxes.forEach(checkbox => {
         checkbox.onclick = function (event) {
-            // écrire function pour code répété:
+            // écrire function pour code répété ci-dessous ce week-end
             const filteredDestinations = [];
             checkBoxes.forEach(input => {
                 if (input.checked === true && input.hasAttribute("data-destination")) {
@@ -72,21 +70,33 @@ function setCheckBoxListeners() {
                     filteredDurations.push(input.getAttribute("data-duration"));
                 }
             })
+            const filteredThematics = [];
+            checkBoxes.forEach(input => {
+                if (input.checked === true && input.hasAttribute("data-thematics")) {
+                    filteredThematics.push(input.getAttribute("data-thematics"));
+                    // ici attribute data-thematics peut avoir plusieurs valeurs !!
+                }
+            })
+            // console.log(filteredDurations);
 
-
-            console.log(filteredBudgets);
-            console.log(filteredDurations);
+            // 3) AXIOS, requête AJAX puis envoie au serveur:
+            // Envoie ces données au serveur sous la forme d'un object
+            // avec key axios nommée par moi et sa valeur est le tableau des checkbox cochées
+            console.log(filteredThematics);
             axios.post("/filter-trips", {
                 destination: filteredDestinations,
                 budget: filteredBudgets,
                 period: filteredPeriods,
                 duration: filteredDurations,
-            }) // ajouter les autres tags ici
+                thematics: filteredThematics,
+            })
+
+                // 5) retour du serveur
                 .then(res => { // revient ici après avoir été dans le back
                     document.querySelector(".container-all-trip-cards").innerHTML = "";
                     // console.log(res.data);
                     res.data.forEach(trip => {
-                        console.log(trip.thematics)
+                        // console.log(trip.thematics)
                         document.querySelector(".container-all-trip-cards").innerHTML += `
                 <div class="trip-cards">
                     <div id="picture-card">
@@ -117,7 +127,6 @@ function setCheckBoxListeners() {
                     </div>
                 </div> `;
                     })
-
                     setHeartListener();
                     axios.get("/get-my-favourites").then(res => {
                         //avant d'arriver au then je passe dans le back
@@ -127,8 +136,6 @@ function setCheckBoxListeners() {
                             if (res.data.includes(id)) { heart.classList.toggle("clicked-heart"), favourites.push(id) }
                         })
                     }).catch(err => console.log(err))
-
-
                 })
                 .catch(err => console.log(err))
         }
@@ -137,9 +144,9 @@ function setCheckBoxListeners() {
 
 setCheckBoxListeners();
 
-// function to display thematics (because it's an array)
+// function pour afficher les thématiques sur les cards => parce que c'est un array
 function getThematics(thematics) {
     let tpl = ""
-    thematics.forEach(theme => { tpl += `<span>${theme}</span>` })
+    thematics.forEach(theme => { tpl += `<span>${theme},</span>` })
     return tpl;
 }
