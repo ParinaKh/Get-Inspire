@@ -1,8 +1,9 @@
-const hearts = document.querySelectorAll(".fas.fa-heart");
+
 var favourites = [];
 
 //afficher les voyages sauvegardés (coeur rouge)
 axios.get("/get-my-favourites").then(res => {
+    const hearts = document.querySelectorAll(".fas.fa-heart");
     //avant d'arriver au then je passe dans le back
     hearts.forEach(heart => {
         let id = heart.getAttribute("data-id")
@@ -12,72 +13,81 @@ axios.get("/get-my-favourites").then(res => {
 
 
 //ajouter ou supprimer des favoris
-hearts.forEach(heart => {
-    heart.onclick = function (event) {
-        heart.classList.toggle("clicked-heart")
-        const tripId = event.target.getAttribute("data-id");
-        if (heart.classList.contains("clicked-heart")) { //ajout favoris
-            favourites.push(tripId)
-            axios.post("/add-favourite", { favourites: favourites }).then(myAPIRes => {
-                const favouriteHearts = myAPIRes.data;
-            }).catch(err => console.log(err))
-        }
-        else {
-            favourites = favourites.filter(id => id !== tripId) // l'id c'est chaque élément des favoris
-            axios.post("/add-favourite", { favourites: favourites }).then(myAPIRes => {
-                const favouriteHearts = myAPIRes.data;
-            }).catch(err => console.log(err))
-        }
-    }
-})
 
+function setHeartListener() {
+    const hearts = document.querySelectorAll(".fas.fa-heart");
+    hearts.forEach(heart => {
+        heart.onclick = function (event) {
+            heart.classList.toggle("clicked-heart")
+            const tripId = event.target.getAttribute("data-id");
+            if (heart.classList.contains("clicked-heart")) { //ajout favoris
+                favourites.push(tripId)
+                axios.post("/add-favourite", { favourites: favourites }).then(myAPIRes => {
+                    const favouriteHearts = myAPIRes.data;
+                }).catch(err => console.log(err))
+            }
+            else {
+                favourites = favourites.filter(id => id !== tripId) // l'id c'est chaque élément des favoris
+                axios.post("/add-favourite", { favourites: favourites }).then(myAPIRes => {
+                    const favouriteHearts = myAPIRes.data;
+                }).catch(err => console.log(err))
+            }
+        }
+    })
+}
 
+setHeartListener();
 //Filtrer les tags
-const checkBoxes = document.querySelectorAll("[name='destination'],[name='period'],[name='budget'],[name='duration']");
-
-checkBoxes.forEach(checkbox => {
-    checkbox.onclick = function (event) {
-        // écrire function pour code répété:
-        const filteredDestinations = [];
-        checkBoxes.forEach(input => {
-            if (input.checked === true && input.hasAttribute("data-destination")) {
-                filteredDestinations.push(input.getAttribute("data-destination"));
-            }
-        })
-        const filteredPeriods = [];
-        checkBoxes.forEach(input => {
-            if (input.checked === true && input.hasAttribute("data-period")) {
-                filteredPeriods.push(input.getAttribute("data-period"));
-            }
-        })
-        const filteredBudgets = [];
-        checkBoxes.forEach(input => {
-            if (input.checked === true && input.hasAttribute("data-budget")) {
-                filteredBudgets.push(input.getAttribute("data-budget"));
-            }
-        })
-        const filteredDurations = [];
-        checkBoxes.forEach(input => {
-            if (input.checked === true && input.hasAttribute("data-duration")) {
-                filteredDurations.push(input.getAttribute("data-duration"));
-            }
-        })
 
 
-        console.log(filteredBudgets);
-        console.log(filteredDurations);
-        axios.post("/filter-trips", {
-            destination: filteredDestinations,
-            budget: filteredBudgets,
-            period: filteredPeriods,
-            duration: filteredDurations,
-        }) // ajouter les autres tags ici
-            .then(res => { // revient ici après avoir été dans le back
-                document.querySelector(".container-all-trip-cards").innerHTML = "";
-                // console.log(res.data);
-                res.data.forEach(trip => {
-                    console.log(trip.thematics)
-                    document.querySelector(".container-all-trip-cards").innerHTML += `
+function setCheckBoxListeners() {
+
+
+    const checkBoxes = document.querySelectorAll("[name='destination'],[name='period'],[name='budget'],[name='duration']");
+
+    checkBoxes.forEach(checkbox => {
+        checkbox.onclick = function (event) {
+            // écrire function pour code répété:
+            const filteredDestinations = [];
+            checkBoxes.forEach(input => {
+                if (input.checked === true && input.hasAttribute("data-destination")) {
+                    filteredDestinations.push(input.getAttribute("data-destination"));
+                }
+            })
+            const filteredPeriods = [];
+            checkBoxes.forEach(input => {
+                if (input.checked === true && input.hasAttribute("data-period")) {
+                    filteredPeriods.push(input.getAttribute("data-period"));
+                }
+            })
+            const filteredBudgets = [];
+            checkBoxes.forEach(input => {
+                if (input.checked === true && input.hasAttribute("data-budget")) {
+                    filteredBudgets.push(input.getAttribute("data-budget"));
+                }
+            })
+            const filteredDurations = [];
+            checkBoxes.forEach(input => {
+                if (input.checked === true && input.hasAttribute("data-duration")) {
+                    filteredDurations.push(input.getAttribute("data-duration"));
+                }
+            })
+
+
+            console.log(filteredBudgets);
+            console.log(filteredDurations);
+            axios.post("/filter-trips", {
+                destination: filteredDestinations,
+                budget: filteredBudgets,
+                period: filteredPeriods,
+                duration: filteredDurations,
+            }) // ajouter les autres tags ici
+                .then(res => { // revient ici après avoir été dans le back
+                    document.querySelector(".container-all-trip-cards").innerHTML = "";
+                    // console.log(res.data);
+                    res.data.forEach(trip => {
+                        console.log(trip.thematics)
+                        document.querySelector(".container-all-trip-cards").innerHTML += `
                 <div class="trip-cards">
                     <div id="picture-card">
                         <i data-id="${trip._id}" class="fas fa-heart"></i>
@@ -106,12 +116,26 @@ checkBoxes.forEach(checkbox => {
                         </div>
                     </div>
                 </div> `;
-                })
-            })
-            .catch(err => console.log(err))
-    }
-})
+                    })
 
+                    setHeartListener();
+                    axios.get("/get-my-favourites").then(res => {
+                        //avant d'arriver au then je passe dans le back
+                        const hearts = document.querySelectorAll(".fas.fa-heart");
+                        hearts.forEach(heart => {
+                            let id = heart.getAttribute("data-id")
+                            if (res.data.includes(id)) { heart.classList.toggle("clicked-heart"), favourites.push(id) }
+                        })
+                    }).catch(err => console.log(err))
+
+
+                })
+                .catch(err => console.log(err))
+        }
+    })
+}
+
+setCheckBoxListeners();
 
 // function to display thematics (because it's an array)
 function getThematics(thematics) {

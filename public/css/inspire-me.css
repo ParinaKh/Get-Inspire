@@ -83,16 +83,8 @@ h3 {
 
 .container-all-trip-cards {
   display: flex;
-<<<<<<< Updated upstream
   flex-direction: row; 
   justify-content: flex-start; 
-=======
-  /* display: grid; */
-  /* grid-template-columns: repeat(3,1fr); */
-  height: 2000px;
-  flex-direction: row;
-  justify-content: flex-start;
->>>>>>> Stashed changes
   flex-wrap: wrap;
   width: 100%;
   align-items: baseline;
