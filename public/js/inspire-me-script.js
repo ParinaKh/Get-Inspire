@@ -33,65 +33,89 @@ hearts.forEach(heart => {
 
 
 //Filtrer les tags
-const checkBoxes = document.querySelectorAll("[name='destination']")
-
-function getThematics(thematics) {
-    const tpl = ""
-    thematics.forEach(theme => { tpl += `<span>${theme}</span>` })
-    return tpl
-}
-
+const checkBoxes = document.querySelectorAll("[name='destination'],[name='period'],[name='budget'],[name='duration']");
 
 checkBoxes.forEach(checkbox => {
     checkbox.onclick = function (event) {
-        const checkedDestination = [];
+        // écrire function pour code répété:
+        const filteredDestinations = [];
         checkBoxes.forEach(input => {
-            if (input.checked === true) {
-                // console.log(c.getAttribute("data-color"))
-                checkedDestination.push(input.getAttribute("data-destination"));
+            if (input.checked === true && input.hasAttribute("data-destination")) {
+                filteredDestinations.push(input.getAttribute("data-destination"));
             }
         })
-        console.log(checkedDestination)
-        axios.post("/filter-trips", { destinations: checkedDestination })
-            .then(res => {
-                document.querySelector(".container-all-trip-cards").innerHTML = ""
+        const filteredPeriods = [];
+        checkBoxes.forEach(input => {
+            if (input.checked === true && input.hasAttribute("data-period")) {
+                filteredPeriods.push(input.getAttribute("data-period"));
+            }
+        })
+        const filteredBudgets = [];
+        checkBoxes.forEach(input => {
+            if (input.checked === true && input.hasAttribute("data-budget")) {
+                filteredBudgets.push(input.getAttribute("data-budget"));
+            }
+        })
+        const filteredDurations = [];
+        checkBoxes.forEach(input => {
+            if (input.checked === true && input.hasAttribute("data-duration")) {
+                filteredDurations.push(input.getAttribute("data-duration"));
+            }
+        })
+
+
+        console.log(filteredBudgets);
+        console.log(filteredDurations);
+        axios.post("/filter-trips", {
+            destination: filteredDestinations,
+            budget: filteredBudgets,
+            period: filteredPeriods,
+            duration: filteredDurations,
+        }) // ajouter les autres tags ici
+            .then(res => { // revient ici après avoir été dans le back
+                document.querySelector(".container-all-trip-cards").innerHTML = "";
+                // console.log(res.data);
                 res.data.forEach(trip => {
+                    console.log(trip.thematics)
                     document.querySelector(".container-all-trip-cards").innerHTML += `
-                            <div class="trip-cards">
-        <div id="picture-card">
-            <i data-id="${trip._id}" class="fas fa-heart"></i>
-            <img src="${trip.pictureTrip}" />
-        </div>
-        <div id="container-text-card">
-            <!-- Favorite button HTML copied from generated WP Plugin HTML -->
-            <div class="polaroids">
-                <span></span>
-                <img class="user-picture" src="${trip.user.userpicture}">
-            </div>
-            <h2>${trip.destination}</h2>
-            <h3>Get Inspired by ${trip.user.name}</h3>
-            <div class="travel-infos-card">
-                <span>${trip.duration}</span>
-                <span>${trip.budget}</span>
-                <span>${trip.period}</span>
-            </div>
-            <div class="call-chevron">
-                <i class="fas fa-chevron-right"></i>
-                <a id="cta" href="/trip/${trip._id}">Discover now !</a>
-            </div>
-        </div>
-    </div> `
+                <div class="trip-cards">
+                    <div id="picture-card">
+                        <i data-id="${trip._id}" class="fas fa-heart"></i>
+                        <img src="${trip.pictureTrip}" />
+                    </div>
+                    <div id="container-text-card">
+                        <!-- Favorite button HTML copied from generated WP Plugin HTML -->
+                        <div class="polaroids">
+                            <span></span>
+                            <img class="user-picture" src="${trip.user.userpicture}">
+                        </div>
+                        <h2>${trip.destination}</h2>
+                        <h3>Get Inspired by ${trip.user.name}</h3>
+                        <div id="tags-card-trip">
+                            <em>Trip mood:</em>
+                            ${getThematics(trip.thematics)}
+                        </div>
+                        <div class="travel-infos-card">
+                            <span>${trip.duration}</span>
+                            <span>${trip.budget}</span>
+                            <span>${trip.period}</span>
+                        </div>
+                        <div class="call-chevron">
+                            <i class="fas fa-chevron-right"></i>
+                            <a id="cta" href="/trip/${trip._id}">Discover now !</a>
+                        </div>
+                    </div>
+                </div> `;
                 })
-            }) // revient ici après avoir été dans le back
+            })
             .catch(err => console.log(err))
     }
 })
 
 
-
-
-
-// <div id="tags-card-trip">
-// <em>Trip mood:</em>
-// ${getThematics(trip.thematics)}
-// </div>
+// function to display thematics (because it's an array)
+function getThematics(thematics) {
+    let tpl = ""
+    thematics.forEach(theme => { tpl += `<span>${theme}</span>` })
+    return tpl;
+}

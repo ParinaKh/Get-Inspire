@@ -82,8 +82,16 @@ h3 {
 
 .container-all-trip-cards {
   display: flex;
+<<<<<<< Updated upstream
   flex-direction: row; 
   justify-content: flex-start; 
+=======
+  /* display: grid; */
+  /* grid-template-columns: repeat(3,1fr); */
+  height: 2000px;
+  flex-direction: row;
+  justify-content: flex-start;
+>>>>>>> Stashed changes
   flex-wrap: wrap;
   width: 100%;
   align-items: baseline;
@@ -192,13 +200,13 @@ header > p {
     font-size: 1rem;
 }
 
-.travel-infos-card { 
+.travel-infos-card {
   display: flex;
   flex-direction:row;
   justify-content: space-evenly;
   align-items: center;
   margin-top: 10px;
-  padding-top: 8px; 
+  padding-top: 8px;
   border-top-color: #7BB4BF;
   border-top-width: 0.2px;
   border-top-style: solid;
@@ -211,7 +219,7 @@ header > p {
   font-size: 14px;
   font-weight: 600;
   color: #6c717a;
-  text-transform: uppercase; 
+  text-transform: uppercase;
 }
 
 #tags-card-trip > span, em {
@@ -227,7 +235,7 @@ header > p {
   padding-top: 5px;
 }
 
- #cta { 
+ #cta {
   content: "» ";
   color: #D75A4A;
   font-size: 0.9rem;
