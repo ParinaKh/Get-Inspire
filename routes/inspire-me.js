@@ -22,6 +22,7 @@ router.post("/filter-trips", (req, res) => {
     else {
         tripModel.find().populate("user").then(dbRes => { console.log("tout", dbRes); res.send(dbRes) }).catch(err => console.log(err))
     }
+    
 })
 
 
