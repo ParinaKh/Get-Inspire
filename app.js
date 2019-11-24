@@ -92,11 +92,11 @@ app.use("/auth", authRouter);
 const createTripRouter = require("./routes/create-trip"); //nom du fichier js dans dossier routes
 app.use("/manage", createTripRouter); // URL
 
-const indexRouter = require("./routes/index");
-app.use("/", indexRouter);
+// const indexRouter = require("./routes/index");
+// app.use("/", indexRouter);
 
-const aboutRouter = require("./routes/index");
-app.use("/", aboutRouter);
+// const aboutRouter = require("./routes/index");
+// app.use("/", aboutRouter);
 
 const inspireRouter = require("./routes/inspire-me");
 app.use("/", inspireRouter);

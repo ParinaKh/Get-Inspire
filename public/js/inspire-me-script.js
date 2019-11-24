@@ -33,7 +33,7 @@ function setHeartListener() {
 setHeartListener();
 
 function setCheckBoxListeners() {
-
+    //
     //Filtrer les tags
     // 1) je selectionne touuutes les checkboxes qui ont l'attribut name=...
     //    = tableau checkBoxes

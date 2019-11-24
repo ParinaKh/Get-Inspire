@@ -2,7 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const tripModel = require("./../models/Trip");
 
-router.get("/inspire-me", (req, res) => {
+router.get(["/", "/inspire-me"], (req, res) => {
     tripModel.find()
         .populate({
             path: "user",
@@ -12,7 +12,7 @@ router.get("/inspire-me", (req, res) => {
         })
         .catch(dbErr => console.error(dbErr))
 });
-
+//
 // 4) reçois les infos de la requête AJAX :
 router.post("/filter-trips", (req, res) => {
 
